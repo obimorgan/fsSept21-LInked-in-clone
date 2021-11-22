@@ -10,8 +10,8 @@ import { Container } from "react-bootstrap";
 
 const Myfooter = () => {
     return (
-        <Container>
-            <Row>
+        <Container className="roby">
+            <Row  >
                 <Col>
                 {/* <img src={logo192} alt="linkedin-logo"/> */}
                     <IconContext.Provider value={{ color: "rgb(0, 65, 130)", size: "25px" }}>
