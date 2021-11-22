@@ -4,8 +4,8 @@ import "./App.css";
 import { Container } from "react-bootstrap";
 import Myfooter from "./Components/Footer/Myfooter";
 import MyNavbar from "./Components/MyNavbar";
-// import MyJumbotron from "./Components/MyJumbotron";
-import MySidebar from "./Components/Sidebar/MySidebar"
+import MyJumbotron from "./Components/MyJumbotron";
+import MyTopSidebar from "./Components/Sidebar/MyTopSidebar";
 
 function App() {
   return (
@@ -15,10 +15,13 @@ function App() {
         <MyNavbar />
       </Container>
       <Container>
-        {/* <MyJumbotron /> */}
-        <MySidebar/>
+          <div class="d-flex justify-content-between">
+            <MyJumbotron />
+            <MyTopSidebar />
+          </div>
         <Myfooter />
       </Container>
+      npm start
     </>
   );
 }
