@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+.vl {
+  border-left: 1px solid rgb(228, 214, 214);
+  height: 50px;
+}
+.work{
+margin-left:40px;
+}
+.h6text{
+  margin-top: 20px;
+  margin-left:40px;
+
+}
