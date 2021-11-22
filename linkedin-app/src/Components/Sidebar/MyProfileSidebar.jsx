@@ -8,14 +8,14 @@ const MyProfilesSidebar = () => {
     const [profiles, setProfiles] = useState()
 
     useEffect(() => {
-        fetchProfiles(setProfiles).then((res) => setProfiles(res))
+        fetchProfiles().then((res) => setProfiles(res))
     }, [])
 
     return (
         <Nav className="flex-column MyProfilesSidebarItem border rounded mt-3">
             <h5 className="h5ProfileHeader">People you may know</h5>
             {
-                profiles && profiles((profile) =>
+                profiles && profiles.map((profile) =>
                     <div className="d-flex">
                         <Col md={2} className="ml-auto my-auto px-0">
                             <Image src={profile.image} roundedCircle />
