@@ -1,12 +1,22 @@
-
+.ali{
+  position: relative;
+}
+.edit-btn2{
+  position: relative;
+    z-index: 1;
+    left: 709px;
+    top: -50px;
+}
 .jumbtrn-cover{
   position: relative;
-  height: 430px;
+  height: 300px;
 }
 .cover-img{
+  object-fit: cover;
   position: relative;
   top: -100px;
   width: 100%;
+  height: 300px;
 }
 .edit-btn{
     position: absolute;
@@ -20,11 +30,12 @@
   top: 332px;
 } */
 .cover-img2{
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
-  border-radius: 300px;
+  border-radius: 200px;
   position: relative;
-  bottom: 200px;
+  bottom: 190px;
+  left: 10px;
 
 }
