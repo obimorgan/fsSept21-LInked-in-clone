@@ -1,11 +1,11 @@
 import "bootstrap/dist/css/bootstrap.css";
-import { Container, Row, Col, Nav } from 'react-bootstrap'
+import { Row, Col, Nav } from 'react-bootstrap'
 import DropdownInput from "./DropdownInput";
 
 
 const Myfooter = () => {
     return (
-        <Container>
+        
             <Row className="jutify-content-end">
                 <Col md={3}>
                     <Nav defaultActiveKey="/home" className="flex-column">
@@ -15,7 +15,7 @@ const Myfooter = () => {
                         <Nav.Link eventKey="link-2">Link</Nav.Link>
                         <Nav.Link eventKey="link-2">Link</Nav.Link>
                         <Nav.Link eventKey="disabled" disabled>
-                            Disabled
+                        Disabled
                         </Nav.Link>
                     </Nav>
                 </Col>
@@ -56,9 +56,8 @@ const Myfooter = () => {
                     
                 </Col>
             </Row>
-            <Col>
-            </Col>
-        </Container>
+
+
     )
 }
 
