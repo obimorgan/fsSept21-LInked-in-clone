@@ -1,10 +1,14 @@
+.mukhtor{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
 .second-edit-btn{
   position: relative;
 }
 .edit-btn2{
   position: relative;
     z-index: 1;
-    left: 709px;
+    left: 94%;
     top: -50px;
 }
 .jumbtrn-cover{
@@ -23,12 +27,7 @@
     right: 0; 
     top: 200px;
 }
-/* .edit-btn2{
-  position: absolute;
-  z-index: 10;
-  right: 0; 
-  top: 332px;
-} */
+
 .cover-img2{
   width: 150px;
   height: 150px;
@@ -38,4 +37,11 @@
   bottom: 190px;
   left: 10px;
 
+}
+
+.contact-link{
+  cursor: pointer;
+}
+.contact-link:hover{
+  text-decoration: underline;
 }
