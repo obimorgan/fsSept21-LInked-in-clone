@@ -4,7 +4,7 @@ import Myfooter from './Components/Footer/Myfooter'
 
 function App() {
   return (
-    <Container fluid>
+    <Container>
       <Row className="px-0">
         <Col md={9} className="px-0">
         </Col>
