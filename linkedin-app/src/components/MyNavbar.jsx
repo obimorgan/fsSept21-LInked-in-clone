@@ -8,18 +8,18 @@ import { FaUserCircle } from "react-icons/fa";
 import { BsGrid3X3GapFill } from "react-icons/bs";
 
 const MyNavbar = () => (
-  <Navbar bg="light" variant="light">
+  <Navbar bg="white" variant="light" >
     <div className="container">
       <Navbar.Brand href="#home">
         <img
           src="assets/Linkedin_logo_initials.png"
           alt=""
-          width="35"
-          height="35"
+          width="38"
+          height="38"
         />
       </Navbar.Brand>
       <Form inline>
-        <FormControl type="text" placeholder="Search" className="mr-sm-5" />
+        <FormControl  type="text" placeholder="Search" className="mr-sm-5" />
       </Form>
       <Nav className="mr-auto">
         <div>
@@ -32,7 +32,7 @@ const MyNavbar = () => (
         </div>
         <div>
           <IoBriefcase style={{ fontSize: "25px" }} />
-          <Nav.Link href="#jobs">jobs</Nav.Link>
+          <Nav.Link href="#jobs">Jobs</Nav.Link>
         </div>
         <div>
           <AiFillMessage style={{ fontSize: "25px" }} />
