@@ -6,7 +6,7 @@ const DropdownInput = () => {
         <>
             <InputGroup>
                 <FormControl
-                    placeholder="Recipient's username"
+                    placeholder="English"
                     aria-label="Recipient's username"
                     aria-describedby="basic-addon2"
                 />
