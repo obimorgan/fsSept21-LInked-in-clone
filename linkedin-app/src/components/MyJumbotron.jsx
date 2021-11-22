@@ -1,19 +1,19 @@
 import { GrEdit } from "react-icons/gr";
 import { Row, Col, Image,  Button, Jumbotron} from "react-bootstrap";
-import logo from './cover.jfif';
+import logo from './cover2.jpg';
 import logo2 from './userImg2.jpg';
     const MyJumbotron = () => {
   return (
     <Row>
       <Col md={9}>
         <Jumbotron className="mt-5">
-          <div className="ali">
+          <div className="second-edit-btn">
           <Button variant="light" className="edit-btn2 rounded-pill"><GrEdit /></Button>
           </div>
           <div className="jumbtrn-cover">
           <Image className="cover-img" src={logo} alt="image-back" />
           <Image className="cover-img2" src={logo2} alt="image-back" />
-          <Button variant="" className="edit-btn"><GrEdit /></Button>
+          <Button variant="" className="edit-btn1"><GrEdit /></Button>
           </div>
           <h1>I'm A User</h1>
           <p>
