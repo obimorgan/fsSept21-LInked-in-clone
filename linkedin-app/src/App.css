@@ -1,6 +1,9 @@
+body{
+  background-color:rgb(242, 242, 253);
+}
 /* .App {
   text-align: center;
-} */
+} */ */
 .roby{
   position: absolute;
   bottom: 0;
@@ -51,4 +54,18 @@
   border-bottom: 1px solid rgba(222, 222, 222, 0.9);
   border-radius: 0;
 }
+.vl {
+  border-left: 1px solid rgb(228, 214, 214);
+  height: 55px;
+}
+.work{
+margin-left:40px;
+}
+.h6text{
+  margin-top: 20px;
+  margin-left:40px;
 
+}
+Nav.Link {
+  margin-top:-5px;
+}
