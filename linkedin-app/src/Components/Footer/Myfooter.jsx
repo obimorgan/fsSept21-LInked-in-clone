@@ -1,12 +1,11 @@
 import "bootstrap/dist/css/bootstrap.css";
-import { Row, Col, Nav } from 'react-bootstrap'
+import { Row, Col, Nav, } from 'react-bootstrap'
 import DropdownInput from "./DropdownInput";
 import { RiQuestionFill } from "react-icons/ri";
 import { IoSettingsSharp } from "react-icons/io5";
 import { BsLinkedin } from "react-icons/bs";
-import { IconContext } from "react-icons"
+import { IconContext } from "react-icons";
 import { Container } from "react-bootstrap";
-
 
 
 const Myfooter = () => {
@@ -14,10 +13,10 @@ const Myfooter = () => {
         <Container>
             <Row>
                 <Col>
-                
-            <IconContext.Provider value={{ color: "blue", size: "25px" }}>
-                    <div className="nav-link footerItem py-1"> <BsLinkedin /></div>
-                </IconContext.Provider>
+                {/* <img src={logo192} alt="linkedin-logo"/> */}
+                    <IconContext.Provider value={{ color: "rgb(0, 65, 130)", size: "25px" }}>
+                        <div className="nav-link footerItem py-1"> <BsLinkedin /></div>
+                    </IconContext.Provider>
                 </Col>
             </Row>
             <Row className="jutify-content-end">
