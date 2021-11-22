@@ -8,7 +8,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { BsGrid3X3GapFill } from "react-icons/bs";
 
 const MyNavbar = () => (
-  <Navbar bg="white" variant="light" >
+  <Navbar sticky="top" bg="white" variant="light" >
     <div className="container">
       <Navbar.Brand href="#home">
         <img
