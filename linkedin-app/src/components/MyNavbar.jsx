@@ -1,4 +1,4 @@
-import { Navbar, Nav, Form, FormControl } from "react-bootstrap";
+import { Navbar, Nav, Form, FormControl, Row, Col, Container} from "react-bootstrap";
 import { ImHome3 } from "react-icons/im";
 import { BsPeopleFill } from "react-icons/bs";
 import { IoBriefcase } from "react-icons/io5";
@@ -8,6 +8,9 @@ import { FaUserCircle } from "react-icons/fa";
 import { BsGrid3X3GapFill } from "react-icons/bs";
 
 const MyNavbar = () => (
+  <Container>
+  <Row>
+    <Col md={12}>
   <Navbar sticky="top" bg="white" variant="light" >
     <div className="container">
       <Navbar.Brand href="#home">
@@ -58,6 +61,9 @@ const MyNavbar = () => (
       </Nav>
     </div>
   </Navbar>
+  </Col>
+  </Row>
+  </Container>
 );
 
 export default MyNavbar;
