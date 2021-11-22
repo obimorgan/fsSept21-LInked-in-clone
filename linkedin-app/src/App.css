@@ -111,3 +111,10 @@ Nav.Link {
 .contact-link:hover {
   text-decoration: underline;
 }
+.MyTopSidebar {
+  font-family: apple-system, system-ui, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.6);
+}

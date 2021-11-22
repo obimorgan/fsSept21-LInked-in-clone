@@ -1,20 +1,24 @@
-import './App.css';
-import { Container, Row, Col } from 'react-bootstrap'
-import Myfooter from './Components/Footer/Myfooter'
-import MyNavbar from './Components/MyNavbar'
-import MyJumbotron from './Components/MyJumbotron'
+/** @format */
+
+import "./App.css";
+import { Container } from "react-bootstrap";
+import Myfooter from "./Components/Footer/Myfooter";
+import MyNavbar from "./Components/MyNavbar";
+// import MyJumbotron from "./Components/MyJumbotron";
+import MySidebar from "./Components/Sidebar/MySidebar"
 
 function App() {
   return (
     <>
-    <div></div>
+      <div></div>
       <Container>
-        <MyNavbar/>
+        <MyNavbar />
       </Container>
-    <Container>
-      <MyJumbotron />
-     <Myfooter />
-    </Container>
+      <Container>
+        {/* <MyJumbotron /> */}
+        <MySidebar/>
+        <Myfooter />
+      </Container>
     </>
   );
 }
