@@ -3,7 +3,7 @@ import { IoMdAdd } from "react-icons/io";
 // import { BsToggleOff } from "react-icons/bs";
 import { useState } from "react";
 const ExprJumbotron = () => {
-  // const [smShow, setSmShow] = useState(false);
+  const [smShow, setSmShow] = useState(false);
   const [lgShow, setLgShow] = useState(false);
   return (
     <Row>
