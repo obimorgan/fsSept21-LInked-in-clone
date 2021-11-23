@@ -96,9 +96,6 @@ const MyNavbar = () => (
       </Nav>
     </div>
   </Navbar>
-  </Col>
-  </Row>
-  </Container>
 );
 
 export default MyNavbar;
