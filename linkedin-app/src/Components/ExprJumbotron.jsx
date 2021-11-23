@@ -24,9 +24,9 @@ const ExprJumbotron = () => {
               Notify network <br />
               <span className="first-param">
                 Turn on to notify your network.Job change updates can take up to
-                2 hours.{" "}
+                2 hours.
                 <span className="text-primary">
-                  Learn More{" "}
+                  Learn More
                   <Form.Check
                     disabled
                     label="off"
