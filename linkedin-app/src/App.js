@@ -5,20 +5,17 @@ import { Container } from "react-bootstrap";
 import Myfooter from "./Components/Footer/Myfooter";
 import MyNavbar from "./Components/MyNavbar";
 import PersonalPage from "./Components/PersonalPage/PersonalPage";
-import { BrowserRouter, Routes, Route} from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <BrowserRouter>
       <Container>
-        <MyNavbar />
-      </Container>
-      <Container>
+      < MyNavbar/>
         <Routes>
-          <Route to="/personal:id" element={<PersonalPage />} />
-       
+          <Route path="/personal" element ={<PersonalPage/>} />
         </Routes>
-        <Myfooter />
+        <Myfooter/>
       </Container>
     </BrowserRouter>
   );
