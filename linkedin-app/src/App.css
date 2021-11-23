@@ -96,13 +96,6 @@
   height: 55px;
 }
 
-
-.h6text{
- 
-  margin-left:40px;
-
-
-}
 Nav.Link {
   margin-top: -5px;
 }
@@ -113,32 +106,54 @@ Nav.Link {
   text-decoration: underline;
 }
 
-
-.searchinput{
-  margin-right: 150px;
+.searchinput {
   height: 45px;
-  width: 280px!important;
-  padding-left:20px;
+  position:relative ;
+ padding-left: 10% !important;
+ 
 
+  
 }
-.container{
+.container {
   align-items: center;
-  margin-top: 20px;
-}
-.iconntext{
-  margin-left: 15px;
-  margin-right: 15px;
-  text-align: center;
 
 }
-.searchicon{
-  position:relative;
-  z-index:1;
-  margin-bottom:-45px ;
-  margin-left: 10px;
+.iconntext {
+  text-align: center;
+}
+.searchicon {
+  position: relative;
+  z-index: 1;
+  margin-bottom: -18%;
+  margin-left: 3%;
+
+
   font-size: large;
 }
+.profilebtn{
+  width: 150px;
+  border-radius: 10px;
+}
+.container{
+  height: 55px !important;
+}
+.navicon{
+  margin-bottom:-10px;
+}
 
+
+
+@media (max-width: 1024px){
+  .container {
+    max-width: 100% !important;
+    padding: 10px !important;
+  }
+}
+@media (max-width: 1024px){
+  .searchinput {
+   display:none !important;
+  }
+}
 
 .MyTopSidebarItem {
   font-family: apple-system, system-ui, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -169,3 +184,4 @@ Nav.Link {
   width: 50px;
   height: 50px;
 }
+
