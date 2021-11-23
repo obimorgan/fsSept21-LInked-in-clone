@@ -108,12 +108,15 @@ Nav.Link {
 
 .searchinput {
   height: 45px;
+  position:relative ;
+ padding-left: 10% !important;
+ 
 
   
 }
 .container {
   align-items: center;
-  margin-top: 20px;
+
 }
 .iconntext {
   text-align: center;
@@ -121,7 +124,32 @@ Nav.Link {
 .searchicon {
   position: relative;
   z-index: 1;
+  margin-bottom: -18%;
+  margin-left: 3%;
 
 
   font-size: large;
+}
+.profilebtn{
+  width: 150px;
+  border-radius: 10px;
+}
+.container{
+  height: 55px !important;
+}
+.navicon{
+  margin-bottom:-10px;
+}
+
+
+@media (max-width: 1024px){
+  .container {
+    max-width: 100% !important;
+    padding: 10px !important;
+  }
+}
+@media (max-width: 1024px){
+  .searchinput {
+   display:none !important;
+  }
 }

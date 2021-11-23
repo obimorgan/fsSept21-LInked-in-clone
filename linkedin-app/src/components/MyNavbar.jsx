@@ -7,7 +7,7 @@ import {
   Col,
   NavDropdown,
 } from "react-bootstrap";
-
+import "bootstrap/dist/css/bootstrap.css";
 import { ImHome3 } from "react-icons/im";
 import { BsPeopleFill } from "react-icons/bs";
 import { IoBriefcase } from "react-icons/io5";
@@ -16,18 +16,19 @@ import { IoNotifications } from "react-icons/io5";
 import { FaUserCircle } from "react-icons/fa";
 import { BsGrid3X3GapFill } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
+import  Navdropdown  from "./Navdropdown"
 
 const MyNavbar = () => (
-  <Navbar sticky="top" bg="white" variant="light">
     <div className="container">
+  <Navbar sticky="top" bg="white" variant="light">
       <Row>
         <Col >
           <Navbar.Brand href="#home">
             <img
               src="assets/Linkedin_logo_initials.png"
               alt=""
-              width="38"
-              height="38"
+              width="35"
+              height="35"
             />
           </Navbar.Brand>
         </Col>
@@ -50,7 +51,7 @@ const MyNavbar = () => (
           <Nav className="mr-auto">
             <div className="iconntext">
               {" "}
-              <ImHome3 style={{ fontSize: "25px" }} />
+              <ImHome3 className="navicon" style={{ fontSize: "22px" }} />
               <Nav.Link href="#home">Home</Nav.Link>
             </div>
           </Nav>
@@ -60,7 +61,7 @@ const MyNavbar = () => (
       <Row>
         <Col >
           <div className="iconntext">
-            <BsPeopleFill className="navicon" style={{ fontSize: "25px" }} />
+            <BsPeopleFill className="navicon" style={{ fontSize: "22px" }} />
             <Nav.Link href="#network"> Network</Nav.Link>{" "}
           </div>
         </Col>
@@ -68,7 +69,7 @@ const MyNavbar = () => (
       <Row>
         <Col >
           <div className="iconntext">
-            <IoBriefcase className="navicon" style={{ fontSize: "25px" }} />
+            <IoBriefcase className="navicon" style={{ fontSize: "22px" }} />
             <Nav.Link href="#jobs">Jobs</Nav.Link>
           </div>
         </Col>
@@ -76,7 +77,7 @@ const MyNavbar = () => (
         <Row>
         <Col>
           <div className="iconntext">
-            <AiFillMessage className="navicon" style={{ fontSize: "25px" }} />
+            <AiFillMessage className="navicon" style={{ fontSize: "22px" }} />
             <Nav.Link href="#messaging">Messaging</Nav.Link>
           </div>
         </Col>
@@ -85,7 +86,7 @@ const MyNavbar = () => (
         <Row>
         <Col >
           <div className="iconntext">
-            <IoNotifications className="navicon" style={{ fontSize: "25px" }} />
+            <IoNotifications className="navicon" style={{ fontSize: "22px" }} />
             <Nav.Link href="#notification">Notification</Nav.Link>
           </div>
         </Col>
@@ -93,18 +94,8 @@ const MyNavbar = () => (
         <Row>
         <Col>
           <div className="iconntext">
-            <FaUserCircle className="navicon" style={{ fontSize: "25px" }} />
-            <NavDropdown title="Me" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
+            <FaUserCircle className="navicon" style={{ fontSize: "22px" }} />
+            <Navdropdown/>
           </div>
         </Col>
         </Row>
@@ -142,8 +133,8 @@ const MyNavbar = () => (
           </div>
         </Col>
       </Row>
-    </div>
   </Navbar>
+    </div>
 );
 
 export default MyNavbar;
