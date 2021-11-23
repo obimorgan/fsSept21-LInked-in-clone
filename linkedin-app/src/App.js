@@ -1,24 +1,27 @@
-import './App.css';
+/** @format */
 
-import MyNavbar from './Components/MyNavbar';
-
-import { Container, Row, Col } from 'react-bootstrap'
-import Myfooter from './Components/Footer/Myfooter'
-
-import MyJumbotron from './Components/MyJumbotron'
+import "./App.css";
+import { Container } from "react-bootstrap";
+import Myfooter from "./Components/Footer/Myfooter";
+import MyNavbar from "./Components/MyNavbar";
+import MyJumbotron from "./Components/MyJumbotron";
+import MyTopSidebar from "./Components/Sidebar/MyTopSidebar";
 
 
 function App() {
   return (
     <>
-    <div></div>
+      <div></div>
       <Container>
-        <MyNavbar/>
+        <MyNavbar />
       </Container>
-    <Container>
-      <MyJumbotron />
-     <Myfooter />
-    </Container>
+      <Container>
+          <div class="d-flex justify-content-between">
+            <MyJumbotron />
+            <MyTopSidebar />
+          </div>
+        <Myfooter />
+      </Container>
     </>
   );
 }
