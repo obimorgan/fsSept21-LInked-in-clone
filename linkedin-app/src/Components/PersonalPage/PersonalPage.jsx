@@ -4,7 +4,8 @@ import MyTopSidebar from "../Sidebar/MyTopSidebar"
 import ExprJumbotron from "../ExprJumbotron"
 import { fetchProfiles, fetchPersonalProfileInfo } from "../../ApiCalls"
 import { useEffect, useState } from 'react'
-import { Row, Col, } from 'react-bootstrap'
+import { Col, } from 'react-bootstrap'
+import { Link } from "react-router-dom"
 
 
 
@@ -19,14 +20,18 @@ const PersonalPage = () => {
 
     return (
         <div className="d-flex">
-        
-            <Col md={9}>
-                <MyJumbotron />
-                <ExprJumbotron />
+
+            <Col md={9} xs={12}>
+                {personalProfile && <MyJumbotron info={personalProfile} />}
+                {personalProfile && <ExprJumbotron info={personalProfile} />}
+
             </Col>
-            <Col md={4}>
+            <Col md={4} xs={12}>
                 <MyTopSidebar />
-                <MyProfilesSidebar />
+                {allUserProfiles && allUserProfiles.map((profile) => <Link to={"/profile" + profile.id}>
+                    <MyProfilesSidebar src={profile.image} name={profile.name} surname={profile.surname} key={profile.id}/>
+                </Link>)}
+                
             </Col>
 
         </div>

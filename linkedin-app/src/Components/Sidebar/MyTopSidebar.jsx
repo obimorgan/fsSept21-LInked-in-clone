@@ -1,6 +1,5 @@
 import { RiQuestionFill } from "react-icons/ri";
 import { Nav } from 'react-bootstrap'
-import MyProfilesSidebar from "./MyProfileSidebar";
 
 
 const MyTopSidebar = () => {
@@ -17,7 +16,6 @@ const MyTopSidebar = () => {
                     <div className="ml-auto my-auto pr-2"><RiQuestionFill /></div>
                 </div>
             </Nav>
-            <MyProfilesSidebar />
         </>
     )
 }

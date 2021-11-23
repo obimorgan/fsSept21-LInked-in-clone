@@ -2,8 +2,8 @@ import { Jumbotron, Button, Row, Col, Modal, Form } from "react-bootstrap";
 import { IoMdAdd } from "react-icons/io";
 import { BsToggleOff } from "react-icons/bs";
 import { useState } from "react";
-const ExprJumbotron = () => {
-  const [smShow, setSmShow] = useState(false);
+
+const ExprJumbotron = ({info}) => {
   const [lgShow, setLgShow] = useState(false);
   return (
     

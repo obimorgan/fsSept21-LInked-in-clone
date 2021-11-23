@@ -8,7 +8,7 @@ import logo from '../Assets/cover2.jpg';
 import { useState } from 'react'
 
 
-const MyJumbotron = (props) => {
+const MyJumbotron = ({info}) => {
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -44,17 +44,17 @@ const MyJumbotron = (props) => {
         </div>
         <div className="jumbtrn-cover">
           <Image className="cover-img" src={logo} alt="image-back" />
-          <Image key={props.key} className="cover-img2" src={props.src} alt="image-back" />
+          <Image key={info.id} className="cover-img2" src={info.image} alt="image-back" />
           <Button variant="" className="edit-btn1"><GrEdit /></Button>
         </div>
         <div className="ml-3">
-          <h1>Header</h1>
+          <h1>{info.name} {info.surname}</h1>
           <p>
 
           </p>
           <form className="form-inline" action="">
             <p className="text-muted">
-              <span className="text-primary contact-link" onClick={handleShow}>Contact Info</span>
+              <span className="text-primary contact-link" onClick={handleShow}>{info.area}</span>
             </p>
           </form>
           <p className="text-primary">
