@@ -185,3 +185,28 @@ Nav.Link {
   height: 50px;
 }
 
+/* Ali Experience Jumbotron Styles */
+
+
+.expr-add-btn{
+  font-size: 25px !important;
+  position: absolute;
+    left: 94%;
+    top: 15px;
+}
+.expr-add-btn:hover{
+  cursor: pointer;
+  background-color: #bdc6cf;
+  border-radius: 20px;
+}
+.first-param{
+  font-size: 15px;
+}
+.ali{
+  background-color: #EEF3F8;
+  border-radius: 5px;
+}
+.on-off{
+  font-size: 35px;
+  margin-left: 130px;
+}
