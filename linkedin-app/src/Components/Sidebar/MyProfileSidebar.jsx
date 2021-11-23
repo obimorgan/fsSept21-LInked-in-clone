@@ -16,12 +16,11 @@ const MyProfilesSidebar = () => {
             <h5 className="h5ProfileHeader">People you may know</h5>
             {
                 profiles && profiles.map((profile) =>
-                    <div className="d-flex">
-                        <Col md={2} className="ml-auto my-auto px-0">
-                            <Image src={profile.image} roundedCircle />
+                    <div className="d-flex my-1">
+                        <Col md={1} className="my-auto">
+                            <Image class="sideBarProfileImg rounded-circle" src={profile.image} />
                         </Col>
                         <Col md={10} className="flex-column">
-                            <Image src={profile.image} roundedCircle />
                             <div className="nav-link px-0 py-0 pName">{profile.name}{profile.surname}</div>
                             <div className="nav-link px-0 py-0 pJob">{profile.title}</div>
                             <Button variant="text-" className="btn3 border-dark rounded-pill mt-2">Connect</Button>
