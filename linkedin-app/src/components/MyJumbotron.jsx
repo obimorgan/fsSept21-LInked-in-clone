@@ -7,6 +7,7 @@ import { Row, Col, Image,  Button, Jumbotron, Modal} from "react-bootstrap";
 import logo from '../Assets/cover2.jpg';
 import logo2 from '../Assets/userImg2.jpg';
 import {useState} from 'react'
+import ExprJumbotron from './ExprJumbotron'
     const MyJumbotron = () => {
       const [show, setShow] = useState(false);
   
@@ -67,6 +68,7 @@ import {useState} from 'react'
 
         </div>
       </Jumbotron>
+      <ExprJumbotron />
     </Col>
   );
 };

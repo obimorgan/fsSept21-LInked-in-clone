@@ -7,7 +7,7 @@ const ExprJumbotron = () => {
   const [lgShow, setLgShow] = useState(false);
   return (
     <Row>
-      <Col md={9}>
+      <Col md={12}>
         <Modal
           size="lg"
           show={lgShow}
