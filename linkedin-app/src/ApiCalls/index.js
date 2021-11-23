@@ -9,10 +9,10 @@ export const fetchProfiles = async () => {
     }
   );
 
-  let Profiles = await response.json();
-  return Profiles;
+  let allUserProfiles = await response.json();
+  return allUserProfiles;
 };
-export const personalProfileInfo = async () => {
+export const fetchPersonalProfileInfo = async () => {
   let response = await fetch(
     "https://striveschool-api.herokuapp.com/api/profile/me",
     {
@@ -23,7 +23,7 @@ export const personalProfileInfo = async () => {
     }
   );
 
-  let Profiles = await response.json();
-  return Profiles;
+  let personalProfile = await response.json();
+  return personalProfile;
 };
 

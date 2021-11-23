@@ -9,10 +9,10 @@ import { useEffect, useEffect, useState } from 'react'
 const PersonalPage = () => {
     const [allUserProfiles, setAllUserProfiles] = useState([])
     const [personalProfile, setPersonalProfile] = useState({})
-    
+
     useEffect(() => {
         fetchProfiles().then((res) => setAllUserProfiles(res))
-        personalProfileInfo().then((res) => setPersonalProfile(res))
+        fetchPersonalProfileInfo().then((res) => setPersonalProfile(res))
     }, [])
 
     return(
