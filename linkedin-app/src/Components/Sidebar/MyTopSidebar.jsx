@@ -1,11 +1,11 @@
 import { RiQuestionFill } from "react-icons/ri";
-import { Col, Nav } from 'react-bootstrap'
+import { Nav } from 'react-bootstrap'
 import MyProfilesSidebar from "./MyProfileSidebar";
 
 
 const MyTopSidebar = () => {
     return (
-        <Col md={4}>
+        <>
             <Nav className="flex-column MyTopSidebarItem border rounded mt-5">
                 <div className="d-flex justify-content-around">
                     <div className="nav-link py-3">Edit public profile &amp; URL</div>
@@ -18,7 +18,7 @@ const MyTopSidebar = () => {
                 </div>
             </Nav>
             <MyProfilesSidebar />
-        </Col>
+        </>
     )
 }
 

@@ -1,9 +1,11 @@
 import MyJumbotron from "../MyJumbotron"
 import MyProfilesSidebar from "../Sidebar/MyProfileSidebar"
 import MyTopSidebar from "../Sidebar/MyTopSidebar"
-import fetchProfiles from "../../ApiCalls"
-import personalProfileInfo from "../../ApiCalls"
-import { useEffect, useEffect, useState } from 'react'
+import ExprJumbotron from "../ExprJumbotron"
+import { fetchProfiles, fetchPersonalProfileInfo } from "../../ApiCalls"
+import { useEffect, useState } from 'react'
+import { Row, Col, } from 'react-bootstrap'
+
 
 
 const PersonalPage = () => {
@@ -12,16 +14,22 @@ const PersonalPage = () => {
 
     useEffect(() => {
         fetchProfiles().then((res) => setAllUserProfiles(res))
-        fetchPersonalProfileInfo().then((res) => setPersonalProfile(res))
+        fetchPersonalProfileInfo("me").then((res) => setPersonalProfile(res))
     }, [])
 
-    return(
-        <>
-        <MyJumbotron/>
-        <MyTopSidebar/>
-        <MyProfilesSidebar/>
-        <ExprJumbotron/>
-        </>
+    return (
+        <div className="d-flex">
+        
+            <Col md={9}>
+                <MyJumbotron />
+                <ExprJumbotron />
+            </Col>
+            <Col md={4}>
+                <MyTopSidebar />
+                <MyProfilesSidebar />
+            </Col>
+
+        </div>
     )
 }
 export default PersonalPage

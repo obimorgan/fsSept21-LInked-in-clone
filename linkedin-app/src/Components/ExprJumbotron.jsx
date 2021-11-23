@@ -6,8 +6,8 @@ const ExprJumbotron = () => {
   const [smShow, setSmShow] = useState(false);
   const [lgShow, setLgShow] = useState(false);
   return (
-    <Row>
-      <Col md={12}>
+    
+      <>
         <Modal
           size="lg"
           show={lgShow}
@@ -119,8 +119,8 @@ const ExprJumbotron = () => {
             <IoMdAdd />
           </p>
         </Jumbotron>
-      </Col>
-    </Row>
+      </>
+
   );
 };
 export default ExprJumbotron;

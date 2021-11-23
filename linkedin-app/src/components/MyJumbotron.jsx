@@ -3,18 +3,18 @@ import { ImLinkedin } from "react-icons/im";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { ImLocation } from "react-icons/im";
 import { AiOutlineMail } from "react-icons/ai";
-import { Col, Image, Button, Jumbotron, Modal } from "react-bootstrap";
+import { Image, Button, Jumbotron, Modal } from "react-bootstrap";
 import logo from '../Assets/cover2.jpg';
 import { useState } from 'react'
 
 
-const MyJumbotron = () => {
+const MyJumbotron = (props) => {
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <Col md={9}>
+    <>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>I'm a User</Modal.Title>
@@ -38,36 +38,36 @@ const MyJumbotron = () => {
             </Button>
         </Modal.Footer>
       </Modal>
-      <Jumbotron  className="mt-5 mukhtor">
+      <Jumbotron className="mt-5 mukhtor">
         <div className="second-edit-btn">
           <Button variant="light" className="edit-btn2 rounded-pill"><GrEdit /></Button>
         </div>
-            <div className="jumbtrn-cover">
-              <Image className="cover-img" src={logo} alt="image-back" />
-              <Image className="cover-img2" alt="image-back" />
-              <Button variant="" className="edit-btn1"><GrEdit /></Button>
-            </div>
-            <div className="ml-3">
-              <h1>Header</h1>
-              <p>
-               
+        <div className="jumbtrn-cover">
+          <Image className="cover-img" src={logo} alt="image-back" />
+          <Image key={props.key} className="cover-img2" src={props.src} alt="image-back" />
+          <Button variant="" className="edit-btn1"><GrEdit /></Button>
+        </div>
+        <div className="ml-3">
+          <h1>Header</h1>
+          <p>
+
           </p>
-              <form className="form-inline" action="">
-                <p className="text-muted">
-                  <span className="text-primary contact-link" onClick={handleShow}>Contact Info</span>
-                </p>
-              </form>
-              <p className="text-primary">
-                100 connections
+          <form className="form-inline" action="">
+            <p className="text-muted">
+              <span className="text-primary contact-link" onClick={handleShow}>Contact Info</span>
+            </p>
+          </form>
+          <p className="text-primary">
+            100 connections
           </p>
-              <form className="form-inline main-btns" action="">
-                <Button variant="primary" className="btn1 rounded-pill">Open to</Button>
-                <Button variant="text-" className="ml-1 btn2 border-dark rounded-pill">Add Section</Button>
-                <Button variant="text-" className="ml-1 btn3 border-dark rounded-pill">More</Button>
-              </form>
-            </div>
+          <form className="form-inline main-btns" action="">
+            <Button variant="primary" className="btn1 rounded-pill">Open to</Button>
+            <Button variant="text-" className="ml-1 btn2 border-dark rounded-pill">Add Section</Button>
+            <Button variant="text-" className="ml-1 btn3 border-dark rounded-pill">More</Button>
+          </form>
+        </div>
       </Jumbotron>
-    </Col>
+    </>
   );
 };
 export default MyJumbotron;

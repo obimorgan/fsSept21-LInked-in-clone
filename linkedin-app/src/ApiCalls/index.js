@@ -12,9 +12,10 @@ export const fetchProfiles = async () => {
   let allUserProfiles = await response.json();
   return allUserProfiles;
 };
-export const fetchPersonalProfileInfo = async () => {
+
+export const fetchPersonalProfileInfo = async (query) => {
   let response = await fetch(
-    "https://striveschool-api.herokuapp.com/api/profile/me",
+    "https://striveschool-api.herokuapp.com/api/profile/"+ query,
     {
       headers: {
         "Content-Type": "application/json",
