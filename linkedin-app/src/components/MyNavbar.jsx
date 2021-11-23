@@ -1,4 +1,3 @@
-
 import {
   Navbar,
   Nav,
@@ -8,8 +7,6 @@ import {
   Col,
   NavDropdown,
 } from "react-bootstrap";
-
-
 
 import { ImHome3 } from "react-icons/im";
 import { BsPeopleFill } from "react-icons/bs";
@@ -21,79 +18,130 @@ import { BsGrid3X3GapFill } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
 
 const MyNavbar = () => (
-
   <Navbar sticky="top" bg="white" variant="light">
-
-
     <div className="container">
-      <Navbar.Brand href="#home">
-        <img
-          src="assets/Linkedin_logo_initials.png"
-          alt=""
-          width="38"
-          height="38"
-        />
-      </Navbar.Brand>
-      <Form inline>
-      <BsSearch className="searchicon"/>
-        <FormControl type="text" placeholder="Search" className="searchinput" />
-      </Form>
-      <Nav className="mr-auto">
-        <div className="iconntext">
-          {" "}
-          <ImHome3 style={{ fontSize: "25px" }} />
-          <Nav.Link href="#home">Home</Nav.Link>
-        </div>
-        <div className="iconntext">
-          <BsPeopleFill className="navicon" style={{ fontSize: "25px" }} />
-          <Nav.Link href="#network"> Network</Nav.Link>{" "}
-        </div>
-        <div className="iconntext">
-          <IoBriefcase className="navicon" style={{ fontSize: "25px" }} />
-          <Nav.Link href="#jobs">Jobs</Nav.Link>
-        </div>
-        <div className="iconntext">
-          <AiFillMessage className="navicon" style={{ fontSize: "25px" }} />
-          <Nav.Link href="#messaging">Messaging</Nav.Link>
-        </div>
-        <div className="iconntext">
-          <IoNotifications className="navicon" style={{ fontSize: "25px" }} />
-          <Nav.Link href="#notification">Notification</Nav.Link>
-        </div>
+      <Row>
+        <Col >
+          <Navbar.Brand href="#home">
+            <img
+              src="assets/Linkedin_logo_initials.png"
+              alt=""
+              width="38"
+              height="38"
+            />
+          </Navbar.Brand>
+        </Col>
+      </Row>
+      <Row>
+        <Col >
+          <Form inline>
+            <BsSearch className="searchicon" />
+            <FormControl
+            
+              type="text"
+              placeholder="Search"
+              className="searchinput"
+            />
+          </Form>
+        </Col>
+      </Row>
+      <Row>
+        <Col >
+          <Nav className="mr-auto">
+            <div className="iconntext">
+              {" "}
+              <ImHome3 style={{ fontSize: "25px" }} />
+              <Nav.Link href="#home">Home</Nav.Link>
+            </div>
+          </Nav>
+        </Col>
+      </Row>
 
-        <div className="iconntext">
-          <FaUserCircle className="navicon" style={{ fontSize: "25px" }} />
-          <NavDropdown title="Me" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">
-              Another action
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">
-              Separated link
-            </NavDropdown.Item>
-          </NavDropdown>
-        </div>
-        <div class="vl"></div>
-        <div  className="iconntext">
-          <BsGrid3X3GapFill className="navicon" style={{ fontSize: "25px" }} />
-          <NavDropdown title="Work" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">
-              Another action
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">
-              Separated link
-            </NavDropdown.Item>
-          </NavDropdown>
-        </div>
-        <div>
-          <h6 className="h6text">Try premium for free</h6>
-        </div>
-      </Nav>
+      <Row>
+        <Col >
+          <div className="iconntext">
+            <BsPeopleFill className="navicon" style={{ fontSize: "25px" }} />
+            <Nav.Link href="#network"> Network</Nav.Link>{" "}
+          </div>
+        </Col>
+      </Row>
+      <Row>
+        <Col >
+          <div className="iconntext">
+            <IoBriefcase className="navicon" style={{ fontSize: "25px" }} />
+            <Nav.Link href="#jobs">Jobs</Nav.Link>
+          </div>
+        </Col>
+        </Row>
+        <Row>
+        <Col>
+          <div className="iconntext">
+            <AiFillMessage className="navicon" style={{ fontSize: "25px" }} />
+            <Nav.Link href="#messaging">Messaging</Nav.Link>
+          </div>
+        </Col>
+        </Row>
+
+        <Row>
+        <Col >
+          <div className="iconntext">
+            <IoNotifications className="navicon" style={{ fontSize: "25px" }} />
+            <Nav.Link href="#notification">Notification</Nav.Link>
+          </div>
+        </Col>
+        </Row>
+        <Row>
+        <Col>
+          <div className="iconntext">
+            <FaUserCircle className="navicon" style={{ fontSize: "25px" }} />
+            <NavDropdown title="Me" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+          </div>
+        </Col>
+        </Row>
+        <Row>
+        <Col >
+          <div class="vl"></div>
+        </Col>
+        </Row>
+        <Row>
+        <Col >
+          <div className="iconntext">
+            <BsGrid3X3GapFill
+              className="navicon"
+              style={{ fontSize: "25px" }}
+            />
+            <NavDropdown title="Work" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+          </div>
+        </Col>
+        </Row>
+        <Row>
+
+        <Col >
+          <div>
+            <h6 className="h6text">Try premium for free</h6>
+          </div>
+        </Col>
+      </Row>
     </div>
   </Navbar>
 );

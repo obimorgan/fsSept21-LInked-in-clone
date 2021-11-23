@@ -96,13 +96,6 @@
   height: 55px;
 }
 
-
-.h6text{
- 
-  margin-left:40px;
-
-
-}
 Nav.Link {
   margin-top: -5px;
 }
@@ -113,30 +106,22 @@ Nav.Link {
   text-decoration: underline;
 }
 
-
-.searchinput{
-  margin-right: 150px;
+.searchinput {
   height: 45px;
-  width: 280px!important;
-  padding-left:20px;
 
+  
 }
-.container{
+.container {
   align-items: center;
   margin-top: 20px;
 }
-.iconntext{
-  margin-left: 15px;
-  margin-right: 15px;
+.iconntext {
   text-align: center;
-
 }
-.searchicon{
-  position:relative;
-  z-index:1;
-  margin-bottom:-45px ;
-  margin-left: 10px;
+.searchicon {
+  position: relative;
+  z-index: 1;
+
+
   font-size: large;
 }
-
-
