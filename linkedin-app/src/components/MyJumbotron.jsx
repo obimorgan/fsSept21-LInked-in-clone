@@ -5,10 +5,7 @@ import { ImLocation } from "react-icons/im";
 import { AiOutlineMail } from "react-icons/ai";
 import { Col, Image, Button, Jumbotron, Modal } from "react-bootstrap";
 import logo from '../Assets/cover2.jpg';
-import logo2 from '../Assets/userImg2.jpg';
-<<<<<<< Updated upstream
 import { useState } from 'react'
-import ExprJumbotron from './ExprJumbotron'
 
 
 const MyJumbotron = () => {
@@ -16,17 +13,6 @@ const MyJumbotron = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-=======
-// import { useState, useEffect } from 'react'
-// import {fetchPersonalProfile} from '../ApiCalls'
-
-
-const MyJumbotron = (props) => {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
->>>>>>> Stashed changes
   return (
     <Col md={9}>
       <Modal show={show} onHide={handleClose}>
@@ -52,17 +38,17 @@ const MyJumbotron = (props) => {
             </Button>
         </Modal.Footer>
       </Modal>
-      <Jumbotron key={props.key} className="mt-5 mukhtor">
+      <Jumbotron  className="mt-5 mukhtor">
         <div className="second-edit-btn">
           <Button variant="light" className="edit-btn2 rounded-pill"><GrEdit /></Button>
         </div>
             <div className="jumbtrn-cover">
               <Image className="cover-img" src={logo} alt="image-back" />
-              <Image className="cover-img2" src={props.src} alt="image-back" />
+              <Image className="cover-img2" alt="image-back" />
               <Button variant="" className="edit-btn1"><GrEdit /></Button>
             </div>
             <div className="ml-3">
-              <h1></h1>
+              <h1>Header</h1>
               <p>
                
           </p>
