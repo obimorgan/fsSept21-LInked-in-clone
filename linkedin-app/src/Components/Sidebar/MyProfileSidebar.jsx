@@ -18,7 +18,7 @@ const MyProfilesSidebar = () => {
                 profiles && profiles.map((profile) =>
                     <div className="d-flex my-1">
                         <Col md={2} className="my-auto">
-                            <Image class="sideBarProfileImg rounded-circle" src={profile.image} />
+                            <Image className="sideBarProfileImg rounded-circle" src={profile.image} />
                         </Col>
                         <Col md={10} className="flex-column">
                             <div className="nav-link px-0 py-0 pName">{profile.name}{profile.surname}</div>
