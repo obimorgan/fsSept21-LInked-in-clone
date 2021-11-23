@@ -118,7 +118,7 @@ Nav.Link {
   margin-right: 150px;
   height: 45px;
   width: 280px!important;
-  padding-left:40px ;
+  padding-left:20px;
 
 }
 .container{
@@ -128,6 +128,7 @@ Nav.Link {
 .iconntext{
   margin-left: 15px;
   margin-right: 15px;
+  text-align: center;
 
 }
 .searchicon{
@@ -137,3 +138,5 @@ Nav.Link {
   margin-left: 10px;
   font-size: large;
 }
+
+
