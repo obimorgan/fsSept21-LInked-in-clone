@@ -4,8 +4,8 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { ImLocation } from "react-icons/im";
 import { AiOutlineMail } from "react-icons/ai";
 import { Row, Col, Image,  Button, Jumbotron, Modal} from "react-bootstrap";
-import logo from './cover2.jpg';
-import logo2 from './userImg2.jpg';
+import logo from '../Assets/cover2.jpg';
+import logo2 from '../Assets/userImg2.jpg';
 import {useState} from 'react'
     const MyJumbotron = () => {
       const [show, setShow] = useState(false);
