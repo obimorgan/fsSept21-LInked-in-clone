@@ -4,7 +4,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { ImLocation } from "react-icons/im";
 import { AiOutlineMail } from "react-icons/ai";
 import { Image, Button, Jumbotron, Modal } from "react-bootstrap";
-// import logo from '../Assets/cover2.jpg';
+import logo from '../../Assets/cover2.jpg';
 import { useState } from 'react'
 
 
@@ -43,7 +43,7 @@ const MyJumbotron = ({info}) => {
           <Button variant="light" className="edit-btn2 rounded-pill"><GrEdit /></Button>
         </div>
         <div className="jumbtrn-cover">
-          {/* <Image className="cover-img"  alt="image-back" /> */}
+          <Image className="cover-img" src={logo} alt="image-back" />
           <Image key={info.id} className="cover-img2" src={info.image} alt="image-back" />
           <Button variant="" className="edit-btn1"><GrEdit /></Button>
         </div>
