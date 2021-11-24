@@ -6,6 +6,7 @@ import MyPJumbo from './MyPJumbo'
 import { useEffect, useState } from 'react'
 import { fetchPersonalProfileInfo, fetchProfiles } from '../../ApiCalls'
 import { useParams } from 'react-router-dom'
+import ExprJumbotron from './ExprJumbotron'
 
 const PersonalExpr = () => {
     const { id } = useParams()
@@ -20,6 +21,7 @@ const PersonalExpr = () => {
         <div className="d-flex">
             <Col md={9}>
                 <MyPJumbo userInfo={userInfo}/>
+                <ExprJumbotron userInfo={userInfo}/>
             </Col>
             <Col md={4}>
                 <MyTopSidebar />
