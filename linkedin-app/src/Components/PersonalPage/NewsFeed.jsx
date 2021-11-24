@@ -1,4 +1,4 @@
-import { fetchPosts } from "../../ApiCalls";
+// import { fetchPosts } from "../../ApiCalls";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
 const NewsFeed = () => {
@@ -36,7 +36,7 @@ const NewsFeed = () => {
     {
         posts.slice(0,50).map(post=> (
         <Card>
-        <Card.Img variant="top" src="{post.user.image}"/>
+        <Card.Img variant="top" src="{post.image}"/>
         <Card.Body>
           <Card.Title>{post.user.name}</Card.Title>
           <Card.Title>{post.text}</Card.Title>
