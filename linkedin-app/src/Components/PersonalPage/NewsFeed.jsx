@@ -5,6 +5,7 @@ import { BiLike } from "react-icons/bi";
 import { FaRegCommentDots } from "react-icons/fa";
 import { FiShare2 } from "react-icons/fi";
 import { IoMdSend } from "react-icons/io";
+import CreatePost from "./CreatePost";
 const NewsFeed = () => {
   const [posts, setPost] = useState([]);
 
@@ -38,7 +39,8 @@ const NewsFeed = () => {
   return (
     <Container>
         <Row className=" justify-content-center">
-            <Col className="col-8">
+            <Col className="col-8 mt-5">
+            <CreatePost />
     {
          posts.slice(0, 10).map(post=>(
             <Jumbotron className="bg-light">
