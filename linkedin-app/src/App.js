@@ -18,8 +18,8 @@ function App() {
           <Route path="/" element ={<PersonalPage/>} />
           <Route path="/profile"  element ={<PersonalPage/>} />
           <Route path="/profile/:id"  element ={<PersonalExpr/>} />
+          <Route path="/home"  element ={<NewsFeed />} />
         </Routes>
-        <NewsFeed  />
         <Myfooter/>
       </Container>
     </BrowserRouter>

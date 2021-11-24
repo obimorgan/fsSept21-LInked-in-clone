@@ -23,8 +23,8 @@ const NewsFeed = () => {
 
       if (response.ok) {
         let data = await response.json();
-
-        setPost(data);
+        console.log(data);
+        setPost(data)
       } else {
         console.log("error has occured");
       }
@@ -32,16 +32,17 @@ const NewsFeed = () => {
   };
 
   return (
-    <>
+    <Container>
+        <Row>
+            <Col md={7}>
     {
-        posts.map(post=> (
-        <Card>
-        <Card.Img variant="top" src="{post.user.image}"/>
+         posts.slice(0, 10).map(post=>(
+        <Card style={{ width: '10rem' }}>
+        <Card.Img variant="top"  className="rounded-circle" src={post.user.image}/>
         <Card.Body>
-          <Card.Title>Card Title</Card.Title>
+          <Card.Title>{post.user.username}</Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            {post.user.bio}
           </Card.Text>
           <Button variant="primary">Go somewhere</Button>
         </Card.Body>
@@ -49,7 +50,9 @@ const NewsFeed = () => {
 
         ))
     }
-    </>
+    </Col>
+    </Row>
+    </Container>
   );
 };
 export default NewsFeed;
