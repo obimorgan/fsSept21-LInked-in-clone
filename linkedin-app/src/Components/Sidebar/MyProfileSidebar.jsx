@@ -6,7 +6,7 @@ const MyProfilesSidebar = ({ personalInfo }) => {
         <Nav className="flex-column MyProfilesSidebarItem border rounded mt-3">
             <h5 className="h5ProfileHeader">People you may know</h5>
             {
-                personalInfo && personalInfo.slice(Math.max(personalInfo.length - 5, 0)).map((info) =>
+                personalInfo && personalInfo.slice(Math.max(personalInfo.length - 7, 0)).map((info) =>
                     <div className="d-flex my-1">
                         <Col md={2} className="my-auto">
                             <Image className="sideBarProfileImg rounded-circle" src={info.image} />
