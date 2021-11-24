@@ -3,26 +3,24 @@
 import "./App.css";
 import { Container } from "react-bootstrap";
 import Myfooter from "./Components/Footer/Myfooter";
-import MyNavbar from "./Components/MyNavbar";
-import MyJumbotron from "./Components/MyJumbotron";
-import MyTopSidebar from "./Components/Sidebar/MyTopSidebar";
-
+import MyNavbar from "./Components/NavBar/MyNavbar";
+import PersonalPage from "./Components/PersonalPage/PersonalPage";
+import PersonalExpr from "./Components/PersonalPage/PersonalExpr"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <>
-      <div></div>
+    <BrowserRouter>
       <Container>
-        <MyNavbar />
+      < MyNavbar/>
+        <Routes>
+          <Route path="/" element ={<PersonalPage/>} />
+          <Route path="/profile"  element ={<PersonalPage/>} />
+          <Route path="/profile/:id"  element ={<PersonalExpr/>} />
+        </Routes>
+        <Myfooter/>
       </Container>
-      <Container>
-          <div class="d-flex justify-content-between">
-            <MyJumbotron />
-            <MyTopSidebar />
-          </div>
-        <Myfooter />
-      </Container>
-    </>
+    </BrowserRouter>
   );
 }
 

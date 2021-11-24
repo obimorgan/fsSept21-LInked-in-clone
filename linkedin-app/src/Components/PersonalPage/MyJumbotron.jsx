@@ -3,18 +3,18 @@ import { ImLinkedin } from "react-icons/im";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { ImLocation } from "react-icons/im";
 import { AiOutlineMail } from "react-icons/ai";
-import { Row, Col, Image,  Button, Jumbotron, Modal} from "react-bootstrap";
-import logo from '../Assets/cover2.jpg';
-import logo2 from '../Assets/userImg2.jpg';
-import {useState} from 'react'
-import ExprJumbotron from './ExprJumbotron'
-    const MyJumbotron = () => {
-      const [show, setShow] = useState(false);
-  
-      const handleClose = () => setShow(false);
-      const handleShow = () => setShow(true);
+import { Image, Button, Jumbotron, Modal } from "react-bootstrap";
+import logo from '../../Assets/cover2.jpg';
+import { useState } from 'react'
+
+
+const MyJumbotron = ({info}) => {
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
-    <Col md={9}>
+    <>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>I'm a User</Modal.Title>
@@ -44,17 +44,17 @@ import ExprJumbotron from './ExprJumbotron'
         </div>
         <div className="jumbtrn-cover">
           <Image className="cover-img" src={logo} alt="image-back" />
-          <Image className="cover-img2" src={logo2} alt="image-back" />
+          <Image key={info.id} className="cover-img2" src={info.image} alt="image-back" />
           <Button variant="" className="edit-btn1"><GrEdit /></Button>
         </div>
         <div className="ml-3">
-          <h1>I'm A User</h1>
+          <h1>{info.name} {info.surname}</h1>
           <p>
-            Valunteer Web Developer - LT Student
+
           </p>
           <form className="form-inline" action="">
             <p className="text-muted">
-              Warsaw, Mazowieckie, Poland. <span className="text-primary contact-link" onClick={handleShow}>Contact Info</span>
+              <span className="text-primary contact-link" onClick={handleShow}>{info.area}</span>
             </p>
           </form>
           <p className="text-primary">
@@ -65,11 +65,9 @@ import ExprJumbotron from './ExprJumbotron'
             <Button variant="text-" className="ml-1 btn2 border-dark rounded-pill">Add Section</Button>
             <Button variant="text-" className="ml-1 btn3 border-dark rounded-pill">More</Button>
           </form>
-
         </div>
       </Jumbotron>
-      <ExprJumbotron />
-    </Col>
+    </>
   );
 };
 export default MyJumbotron;
