@@ -10,23 +10,24 @@ const ExpFormModal = ({ lgShow, id }) => {
         company: "",
         description: "",
         area: "",
-        expId: null
+        startDate:new Date()
+        
     })
-    useEffect(() => {
-        setExperience(experience => ({
-            ...experience,
-            expId: id
-        }))
-    }, [id])
+    // useEffect(() => {
+    //     setExperience(experience => ({
+    //         ...experience,
+           
+    //     }))
+    // }, [id])
 
-    const postExperience = async (id) => {
+    const postExperience = async () => {
         
         console.log("Test test test")
         try {
             let res = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`,
                 {
                     method: "POST",
-                    body: JSON.stringyfy(experience),
+                    body: JSON.stringify(experience),
                     headers: {
                         "Content-type": "application/json",
                         Authorization: `Bearer ${process.env.REACT_APP_JWT_TOKEN}`
@@ -45,7 +46,7 @@ const ExpFormModal = ({ lgShow, id }) => {
 
     return (
         <>
-            <Form onSubmit={postExperience()}>
+            <Form >
                 <Modal
 
                     size="lg"
@@ -133,7 +134,7 @@ const ExpFormModal = ({ lgShow, id }) => {
                         <Button variant="" className="rounded-pill add-media text-primary border-primary"><IoMdAdd />Add media</Button>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="primary" type="submit" className="rounded-pill">
+                        <Button variant="primary" onClick={postExperience} className="rounded-pill">
                             Submit
           </Button>
                     </Modal.Footer>
