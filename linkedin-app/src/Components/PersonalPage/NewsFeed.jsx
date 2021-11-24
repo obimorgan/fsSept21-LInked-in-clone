@@ -1,4 +1,4 @@
-import { fetchPosts } from "../../ApiCalls";
+// import { fetchPosts } from "../../ApiCalls";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
 const NewsFeed = () => {
