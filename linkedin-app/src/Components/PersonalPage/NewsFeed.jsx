@@ -1,6 +1,10 @@
 // import { fetchPosts } from "../../ApiCalls";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Container, Row, Col, Card, Button, Jumbotron } from "react-bootstrap";
 import { useState, useEffect } from "react";
+import { BiLike } from "react-icons/bi";
+import { FaRegCommentDots } from "react-icons/fa";
+import { FiShare2 } from "react-icons/fi";
+import { IoMdSend } from "react-icons/io";
 const NewsFeed = () => {
   const [posts, setPost] = useState([]);
 
@@ -33,20 +37,27 @@ const NewsFeed = () => {
 
   return (
     <Container>
-        <Row>
-            <Col md={7}>
+        <Row className=" justify-content-center">
+            <Col className="col-8">
     {
          posts.slice(0, 10).map(post=>(
-        <Card style={{ width: '10rem' }}>
-        <Card.Img variant="top"  className="rounded-circle" src={post.user.image}/>
-        <Card.Body>
-          <Card.Title>{post.user.username}</Card.Title>
-          <Card.Text>
-            {post.user.bio}
-          </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
-        </Card.Body>
-      </Card>
+            <Jumbotron className="bg-light">
+            <img src={post.user.image} className="user-img" alt="user-img" />
+            <h3>{post.user.username}</h3>
+            <p>
+              {post.text}<br/>
+              <strong>{post.user.title}</strong>
+            </p>
+            <p >Contact Info</p>
+            <p className="emails text-primary">{post.user.email}</p>
+           <hr/>
+           <form action="" className="form-inline justify-content-center">
+           <Button className="user-btns mx-2" variant=""><BiLike /> Like</Button>
+           <Button className="user-btns mx-2" variant=""><FaRegCommentDots /> Comment</Button>
+           <Button className="user-btns mx-2" variant=""><FiShare2 /> Share</Button>
+           <Button className="user-btns mx-2" variant=""><IoMdSend /> Send</Button>
+           </form>
+          </Jumbotron>
 
         ))
     }

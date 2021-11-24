@@ -10,7 +10,7 @@ import { Container } from "react-bootstrap";
 
 const Myfooter = () => {
     return (
-        <Container className="roby">
+        <Container className="roby fixed-bottom">
             <Row  >
                 <Col>
                 {/* <img src={logo192} alt="linkedin-logo"/> */}
