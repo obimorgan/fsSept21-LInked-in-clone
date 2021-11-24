@@ -112,11 +112,11 @@ const ExprJumbotron = ({ userInfo }) => {
           </Button>
         </Modal.Footer>
       </Modal>
-      <Jumbotron key={userInfo._id} >
+      <Jumbotron >
         <div className='d-flex'>
           <h3 className="mt-n5">Experiences</h3>
-          <p className="mt-n5">{userInfo.name}</p>
-          <p className="mt-n5">{userInfo._id}</p>
+          {/* <p className="mt-n5">{userInfo.name}</p>
+          <p className="mt-n5">{userInfo._id}</p> */}
         </div>
 
         <p className="expr-add-btn" onClick={() => setLgShow(true)}>
