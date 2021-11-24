@@ -34,7 +34,7 @@ const NewsFeed = () => {
   return (
     <>
     {
-        posts.slice(0,50).map(post=> (
+        posts.slice(0,20).map(post=> (
         <Card>
         <Card.Img variant="top" src="{post.image}"/>
         <Card.Body>
