@@ -27,4 +27,18 @@ export const fetchPersonalProfileInfo = async (id) => {
   let personalProfile = await response.json();
   return personalProfile;
 };
+export const fetchPersonalExpiriences = async (id) => {
+  let response = await fetch(
+    `https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`,
+    {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:`Bearer ${process.env.REACT_APP_JWT_TOKEN}`
+     },
+    }
+  );
+
+  let personalExperiences = await response.json();
+  return personalExperiences;
+};
 

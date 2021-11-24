@@ -190,9 +190,6 @@ Nav.Link {
 
 .expr-add-btn{
   font-size: 25px !important;
-  position: absolute;
-    left: 94%;
-    top: 15px;
 }
 .expr-add-btn:hover{
   cursor: pointer;
