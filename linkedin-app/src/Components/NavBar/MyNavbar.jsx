@@ -17,9 +17,12 @@ import { FaUserCircle } from "react-icons/fa";
 import { BsGrid3X3GapFill } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
 import  Navdropdown  from "./Navdropdown"
+import { Link, useLocation } from 'react-router-dom'
 
-const MyNavbar = () => (
-    <div className="container">
+const MyNavbar = () => {
+      const location = useLocation()
+      return(
+  <div className="container">
   <Navbar sticky="top" bg="white" variant="light">
       <Row>
         <Col >
@@ -52,7 +55,10 @@ const MyNavbar = () => (
             <div className="iconntext">
               {" "}
               <ImHome3 className="navicon" style={{ fontSize: "22px" }} />
-              <Nav.Link href="#home">Home</Nav.Link>
+
+              <Link to="/home">
+                <div className={'nav-link' + (location.pathname === '/home' ? ' active' : '')}>Home</div>
+              </Link>
             </div>
           </Nav>
         </Col>
@@ -135,6 +141,7 @@ const MyNavbar = () => (
       </Row>
   </Navbar>
     </div>
-);
+      )
+}
 
 export default MyNavbar;

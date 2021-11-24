@@ -207,3 +207,35 @@ Nav.Link {
   font-size: 35px;
   margin-left: 130px;
 }
+
+/* POSTS STYLE GOES HERE */
+
+.user-img{
+  margin-bottom: 20px;
+  object-fit: cover;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  left: 0;
+  top: 0;
+}
+.emails:hover{
+  text-decoration: underline;
+
+}
+.user-btns:hover{
+  border: 1px solid grey;
+}
+.post-user-img{
+  margin-top: -50px;
+  width: 70px;
+  height: 70px;
+}
+.user-btn{
+min-width: 500px !important;
+margin-top: -50px;
+margin-left: 15px;
+border: 1px solid grey !important;
+}
+

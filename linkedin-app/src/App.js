@@ -4,6 +4,7 @@ import "./App.css";
 import { Container } from "react-bootstrap";
 import Myfooter from "./Components/Footer/Myfooter";
 import MyNavbar from "./Components/NavBar/MyNavbar";
+import NewsFeed from "./Components/PersonalPage/NewsFeed";
 import PersonalPage from "./Components/PersonalPage/PersonalPage";
 import PersonalExpr from "./Components/PersonalPage/PersonalExpr"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element ={<PersonalPage/>} />
           <Route path="/profile"  element ={<PersonalPage/>} />
           <Route path="/profile/:id"  element ={<PersonalExpr/>} />
+          <Route path="/home"  element ={<NewsFeed />} />
         </Routes>
         <Myfooter/>
       </Container>
