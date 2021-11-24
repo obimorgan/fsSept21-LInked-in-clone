@@ -1,6 +1,5 @@
-import { Jumbotron, Button, Row, Col, Modal, Form } from "react-bootstrap";
+import { Jumbotron, Button, Col, Modal, Form } from "react-bootstrap";
 import { IoMdAdd } from "react-icons/io";
-import { BsToggleOff } from "react-icons/bs";
 import { useState } from "react";
 
 const ExprJumbotron = ({info}) => {

@@ -62,7 +62,7 @@ const MyPJumbo = ({ userInfo }) => {
                     </form>
                     <p className="text-primary">
                         100 connections
-          </p>
+                    </p>
                     <form className="form-inline main-btns" action="">
                         <Button variant="primary" className="btn1 rounded-pill">Open to</Button>
                         <Button variant="text-" className="ml-1 btn2 border-dark rounded-pill">Add Section</Button>
