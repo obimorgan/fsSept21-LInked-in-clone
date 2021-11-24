@@ -24,7 +24,7 @@ const MyNavbar = () => {
   const location = useLocation();
   return (
     <Container>
-      <Navbar sticky="top" bg="white" variant="light" className="mukh">
+      <Navbar sticky="top" bg="white" variant="light" className="navbar-style">
         <Row>
           <Col>
             <Navbar.Brand href="#home">

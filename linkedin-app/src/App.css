@@ -242,7 +242,6 @@ border: 1px solid grey !important;
 .App-header{
   background-color: rgb(255, 246, 246);
 }
-.mukh{
-  width:auto!important;
+.navbar-style{
   height: 60px !important;
 }
