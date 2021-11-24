@@ -1,5 +1,5 @@
 // import { fetchPosts } from "../../ApiCalls";
-import { Container, Row, Col, Card, Button, Jumbotron } from "react-bootstrap";
+import { Row, Col, Button, Jumbotron } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { BiLike } from "react-icons/bi";
 import { FaRegCommentDots } from "react-icons/fa";

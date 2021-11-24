@@ -4,7 +4,7 @@ import "./App.css";
 import { Container } from "react-bootstrap";
 import Myfooter from "./Components/Footer/Myfooter";
 import MyNavbar from "./Components/NavBar/MyNavbar";
-import NewsFeed from "./Components/PersonalPage/NewsFeed";
+import NewsFeed from "./Components/HomePage/NewsFeed";
 import PersonalPage from "./Components/PersonalPage/PersonalPage";
 import PersonalExpr from "./Components/PersonalPage/PersonalExpr"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
