@@ -1,7 +1,7 @@
 /** @format */
 
 import "./App.css";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import Myfooter from "./Components/Footer/Myfooter";
 import MyNavbar from "./Components/NavBar/MyNavbar";
 import NewsFeed from "./Components/PersonalPage/NewsFeed";
@@ -11,8 +11,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
+    <div className="App-header">
+    <Row className="justify-content-center">
+      <Col md={7}>
     <BrowserRouter>
-      <Container>
       < MyNavbar/>
         <Routes>
           <Route path="/" element ={<PersonalPage/>} />
@@ -21,8 +23,10 @@ function App() {
           <Route path="/home"  element ={<NewsFeed />} />
         </Routes>
         <Myfooter/>
-      </Container>
     </BrowserRouter>
+     </Col> 
+    </Row>
+      </div>
   );
 }
 

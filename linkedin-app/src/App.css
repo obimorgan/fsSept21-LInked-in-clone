@@ -239,3 +239,10 @@ margin-left: 15px;
 border: 1px solid grey !important;
 }
 
+.App-header{
+  background-color: rgb(255, 246, 246);
+}
+.mukh{
+  width:auto!important;
+  height: 60px !important;
+}

@@ -6,6 +6,7 @@ import { RiCalendarEventLine } from "react-icons/ri";
 import { GrArticle } from "react-icons/gr";
 const CreatePost =()=> {
     return(
+        
         <Jumbotron className="bg-light">
         <form action="" className="form-inline">
             <img src={img} alt="image" className="post-user-img rounded-circle"/>
