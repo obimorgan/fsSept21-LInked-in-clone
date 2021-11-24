@@ -37,7 +37,6 @@ const NewsFeed = () => {
   };
 
   return (
-    <Container>
         <Row className=" justify-content-center">
             <Col className="col-8 mt-5">
             <CreatePost />
@@ -65,7 +64,6 @@ const NewsFeed = () => {
     }
     </Col>
     </Row>
-    </Container>
   );
 };
 export default NewsFeed;
