@@ -44,15 +44,3 @@ export const fetchPersonalExpiriences = async (id) => {
   let personalExperiences = await response.json();
   return personalExperiences;
 };
-
-export const fetchPosts = async () => {
-  let response = await fetch(
-    "https://striveschool-api.herokuapp.com/api/posts/",
-    {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization:`Bearer ${process.env.REACT_APP_JWT_TOKEN}`
-     },
-    }
-  );
-}

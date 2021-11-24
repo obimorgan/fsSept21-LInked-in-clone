@@ -1,4 +1,4 @@
-import {Jumbotron, Button, Form} from 'react-bootstrap'
+import {Jumbotron, Button } from 'react-bootstrap'
 import img from '../../Assets/userImg.png'
 import { MdAddToPhotos } from "react-icons/md";
 import { MdOutlineVideoLibrary } from "react-icons/md";
@@ -8,7 +8,7 @@ const CreatePost =()=> {
     return(
         <Jumbotron className="bg-light">
         <form action="" className="form-inline">
-            <img src={img} alt="image" className="post-user-img rounded-circle"/>
+            <img src={img} alt="post" className="post-user-img rounded-circle"/>
             <Button variant="" className="user-btn rounded-pill text-left text-muted">Start a post</Button>
         </form>
         <form action="" className="form-inline ml-5">
