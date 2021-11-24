@@ -233,7 +233,7 @@ Nav.Link {
   height: 70px;
 }
 .user-btn{
-min-width: 500px !important;
+min-width: 720px !important;
 margin-top: -50px;
 margin-left: 15px;
 border: 1px solid grey !important;
@@ -244,4 +244,7 @@ border: 1px solid grey !important;
 }
 .navbar-style{
   height: 60px !important;
+}
+.user-btn:hover{
+  background-color:  rgb(255, 246, 246);
 }

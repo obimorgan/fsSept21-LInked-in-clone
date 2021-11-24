@@ -38,11 +38,11 @@ const NewsFeed = () => {
 
   return (
         <Row className=" justify-content-center">
-            <Col className="col-8 mt-5">
+            <Col className="col-8 mt-2">
             <CreatePost />
     {
          posts.slice(0, 10).map(post=>(
-            <Jumbotron className="bg-light">
+            <Jumbotron className="bg-light border border-muted">
             <img src={post.user.image} className="user-img" alt="user-img" />
             <h3>{post.user.username}</h3>
             <p>
