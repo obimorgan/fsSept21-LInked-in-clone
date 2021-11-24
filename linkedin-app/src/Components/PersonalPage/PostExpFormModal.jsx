@@ -21,8 +21,6 @@ const ExpFormModal = ({ lgShow, id }) => {
     // }, [id])
 
     const postExperience = async () => {
-        
-        console.log("Test test test")
         try {
             let res = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`,
                 {
