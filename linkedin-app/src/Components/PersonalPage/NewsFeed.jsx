@@ -34,14 +34,17 @@ const NewsFeed = () => {
   return (
     <>
     {
-        posts.slice(0,7).map(post=> (
+        posts.slice(0,50).map(post=> (
         <Card>
         <Card.Img variant="top" src="{post.user.image}"/>
         <Card.Body>
-          <Card.Title>Card Title</Card.Title>
+          <Card.Title>{post.user.name}</Card.Title>
+          <Card.Title>{post.text}</Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+          {post.user.title}<br/>
+          {post.user.email}<br/>
+          
+                    
           </Card.Text>
           <Button variant="primary">Go somewhere</Button>
         </Card.Body>
