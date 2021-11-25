@@ -1,8 +1,8 @@
 // import { fetchPosts } from "../../ApiCalls";
-import { Container, Row, Col, Card, Button, Jumbotron } from "react-bootstrap";
+import {Row, Col, Button, Jumbotron } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { BiLike } from "react-icons/bi";
-import { FaRegCommentDots } from "react-icons/fa";
+import { FaRegCommentDots} from "react-icons/fa";
 import { FiShare2 } from "react-icons/fi";
 import { IoMdSend } from "react-icons/io";
 import CreatePost from "./CreatePost";
@@ -28,8 +28,8 @@ const NewsFeed = () => {
 
       if (response.ok) {
         let data = await response.json();
-        console.log(data);
         setPost(data)
+        
       } else {
         console.log("error has occured");
       }
@@ -39,7 +39,7 @@ const NewsFeed = () => {
   return (
         <Row className=" justify-content-center">
             <Col className="col-8 mt-2">
-            <CreatePost />
+            <CreatePost id={posts._id}/>
     {
          posts.slice(0, 10).map(post=>(
             <Jumbotron className="bg-light border border-muted">
