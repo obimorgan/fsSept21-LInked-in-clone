@@ -53,10 +53,10 @@ const NewsFeed = () => {
             <p className="emails text-primary">{post.user.email}</p>
            <hr/>
            <form action="" className="form-inline justify-content-center">
-           <Button className="user-btns mx-2" variant=""><BiLike /> Like</Button>
-           <Button className="user-btns mx-2" variant=""><FaRegCommentDots /> Comment</Button>
-           <Button className="user-btns mx-2" variant=""><FiShare2 /> Share</Button>
-           <Button className="user-btns mx-2" variant=""><IoMdSend /> Send</Button>
+           <Button className="user-btns mx-2 rounded-pill" variant=""><BiLike /> Like</Button>
+           <Button className="user-btns mx-2 rounded-pill" variant=""><FaRegCommentDots /> Comment</Button>
+           <Button className="user-btns mx-2 rounded-pill" variant=""><FiShare2 /> Share</Button>
+           <Button className="user-btns mx-2 rounded-pill" variant=""><IoMdSend /> Send</Button>
            </form>
           </Jumbotron>
 

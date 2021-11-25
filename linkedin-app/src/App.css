@@ -227,16 +227,17 @@ Nav.Link {
 .user-btns:hover{
   border: 1px solid grey;
 }
-.post-user-img{
+.user-img{
   margin-top: -50px;
   width: 70px;
   height: 70px;
 }
 .user-btn{
-min-width: 720px !important;
-margin-top: -50px;
-margin-left: 15px;
-border: 1px solid grey !important;
+  position: relative;
+  min-width: 82% !important;
+  margin-top: -50px;
+  margin-left: 15px;
+  border: 1px solid grey !important;
 }
 
 .App-header{
@@ -247,4 +248,20 @@ border: 1px solid grey !important;
 }
 .user-btn:hover{
   background-color:  rgb(255, 246, 246);
+}
+.user-btns1:hover{
+border: 1px solid grey !important;
+
+}
+.post-user-img{
+  width: 50px;
+  height: 50px;
+}
+.anyone-seen-btn{
+  border: 1px solid grey !important;
+}
+.user-name{
+  position: absolute;
+  left: 80px;
+  top: 14px;
 }
