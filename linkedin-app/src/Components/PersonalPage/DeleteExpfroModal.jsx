@@ -1,27 +1,28 @@
 import { Modal, Form, Button, } from 'react-bootstrap'
 import { IoMdAdd } from "react-icons/io";
+// import {useState } from 'react'
 
 
 
 
-const DeleteExpFormModal = ({ lgShow, id, expId }) => {
-    const [singelExp, setSingleExp] = useState({})
+const DeleteExpFormModal = ({ lgShow, id, expId, singleExp, experience }) => {
+    // const [singleExp, setSingleExp] = useState({})
     const deleteExperience = async () => {
         try {
-            let res = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${id}/experiences/${expId}`,
+            let response= await fetch(`https://striveschool-api.herokuapp.com/api/profile/${id}/experiences/'${expId}`,
                 {
                     method: "DELETE",
-                    body: JSON.stringify(experience),
+                    body: JSON.stringify(),
                     headers: {
                         "Content-type": "application/json",
                         Authorization: `Bearer ${process.env.REACT_APP_JWT_TOKEN}`
                     }
                 })
-            if (res.ok) {
-                let data = await response.json();
-                setSingleExp(data)
+            if (response.ok) {
+             alert("Experience is deleted!")
+                
             } else {
-                throw res
+                throw response
             }
         } catch (error) {
             console.log(error)
@@ -31,7 +32,6 @@ const DeleteExpFormModal = ({ lgShow, id, expId }) => {
         <>
             <Form >
                 <Modal
-                    key
                     size="lg"
                     show={lgShow}
                     onHide={() => (lgShow)} ///// need to fix this!! this allows for the for to close

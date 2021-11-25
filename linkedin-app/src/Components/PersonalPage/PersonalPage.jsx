@@ -8,14 +8,14 @@ import { Col, } from 'react-bootstrap'
 
 
 
-const PersonalPage = () => {
+const PersonalPage = (id) => {
     const [allUserProfiles, setAllUserProfiles] = useState([])
     const [personalProfile, setPersonalProfile] = useState({})
 
 
     useEffect(() => {
         fetchProfiles().then((res) => setAllUserProfiles(res))
-        fetchPersonalProfileInfo("me").then((res) => setPersonalProfile(res))
+        fetchPersonalProfileInfo('me').then((res) => setPersonalProfile(res))
     }, [])
 
     return (

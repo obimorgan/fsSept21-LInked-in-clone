@@ -1,15 +1,15 @@
 import { Jumbotron, Col, Image, Button } from "react-bootstrap";
 import { IoMdAdd } from "react-icons/io";
 import { GrEdit } from "react-icons/gr";
-import { useState } from "react";
-import PostExpFormModal from "./PostExpFormModal"
-import DeleteExpFormModal from "./PostExpFormModal"
+import { useState} from "react";
+import DeleteExpFormModal from "../PersonalPage/DeleteExpfroModal"
 
 
 
-const singleExprJumbotron = ({ singleExp }) => {
+
+const SingleExprJumbotron = ({singleExp}) => {
+
   const [lgShow, setLgShow] = useState(false);
-  // const [expId, setExpId] = useState("")
   return (
 
     <>
@@ -27,25 +27,23 @@ const singleExprJumbotron = ({ singleExp }) => {
               <Button variant="" className="" onClick={() => setLgShow(true)}><GrEdit /></Button>
             </Col>
           </div>
-          {
-            singleExp && singleExp.map((exp) =>
-              <>
-                <div key={exp._id} className='d-flex mx-3 mb-2 border-bottom'>
-                  <Image className="sideBarProfileImg mb-2" src={exp.image} roundedCircle />
-                  <Col className="flex-column">
-                    <div className="pName mb-2">{exp.area}</div>
-                    <div className="pJob">{exp.description}</div>
-                  </Col>
-                </div>
-                <DeleteExpFormModal lgShow={lgShow} singleExp={exp._id} />
-                <PostExpFormModal lgShow={lgShow} />
-              </>
-            )}
+          <div key={singleExp._id} className='d-flex mx-3 mb-2 border-bottom'>
+            <Image className="sideBarProfileImg mb-2" src={singleExp.image} roundedCircle />
+            <Col className="flex-column">
+              <div className="pName mb-2">{singleExp.area}</div>
+              <div className="pJob">{singleExp.description}</div>
+            </Col>
+          </div>
+          <DeleteExpFormModal lgShow={lgShow} expId={singleExp._id}
+          singleExp={singleExp}
+          />
+          
+          
         </div>
       </Jumbotron>
-     
+
     </>
 
   );
 };
-export default singleExprJumbotron;
+export default SingleExprJumbotron;

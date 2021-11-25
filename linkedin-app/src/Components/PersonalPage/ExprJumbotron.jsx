@@ -38,7 +38,12 @@ const ExprJumbotron = ({ expInfo, id }) => {
                     <div className="pJob">{exp.description}</div>
                   </Col>
                   <Col md={2} >
-                    <Link className="ml-3" to={`/profile/${id}/experience/${exp._id}`}><GrEdit /></Link>
+
+                    {/* Link to <ExperienceDetail/> */}
+
+                    <Link className="ml-3" to={`/profile/${id}/${exp._id}`}><GrEdit /></Link>
+
+
                   </Col>
                 </div>
                 <DeleteExpFormModal lgShow={lgShow} expInfo={exp._id} />

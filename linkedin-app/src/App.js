@@ -7,7 +7,7 @@ import MyNavbar from "./Components/NavBar/MyNavbar";
 import NewsFeed from "./Components/HomePage/NewsFeed";
 import PersonalPage from "./Components/PersonalPage/PersonalPage";
 import PersonalExpr from "./Components/PersonalPage/PersonalExpr"
-import ExperienceDetail from "./Components/PersonalPage/PersonalExpr"
+import ExperienceDetail from "./Components/ExperienceDetail/ExperienceDetail"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -16,11 +16,11 @@ function App() {
       <Container>
       < MyNavbar/>
         <Routes>
-          <Route path="/" element ={<PersonalPage/>} />
-          <Route path="/profile"  element ={<PersonalPage/>} />
-          <Route path="/profile/:id"  element ={<PersonalExpr/>} />
-          <Route path="/profile/details/experience/:expId"  element ={<ExperienceDetail/>} />
-          <Route path="/home"  element ={<NewsFeed />} />
+          <Route path="/" exact={true} element ={<PersonalPage/>} />
+          <Route path="/profile" exact={true}  element ={<PersonalPage/>} />
+          <Route path="/profile/:id" exact={true}  element ={<PersonalExpr/>} />
+          <Route path="/profile/:id/:expId" exact={true} element ={<ExperienceDetail/>} />
+          <Route path="/home" exact={true}  element ={<NewsFeed />} />
         </Routes>
         <Myfooter/>
       </Container>
