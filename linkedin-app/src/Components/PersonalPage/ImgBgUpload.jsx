@@ -27,7 +27,7 @@ const ImgBgUpload =()=>(
 
 </div>
 <div className="d-flex justify-content-center ">
-<Button variant="light border mx-4"> Deletep photo</Button>
+<Button variant="light border mx-4"> Delete photo</Button>
 
 <Button variant="light rounded-pill border mx-4"> Change Photo</Button>
 
