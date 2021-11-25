@@ -15,7 +15,7 @@ const MyJumbotron = ({info}) => {
   const handleShow = () => setShow(true);
   return (
     <>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} className="userjumbo">
         <Modal.Header closeButton>
           <Modal.Title>I'm a User</Modal.Title>
         </Modal.Header>
