@@ -15,7 +15,7 @@ const CreatePost = () => {
 
   return (
     <>
-      <Modal show={show} onHide={handleClose} animation={false}>
+      <Modal show={show} onHide={handleClose} animation={false} >
         <Modal.Header closeButton>
           <Modal.Title className="text-muted">Create a post</Modal.Title>
         </Modal.Header>
