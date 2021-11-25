@@ -38,7 +38,7 @@ const MyJumbotron = ({info}) => {
             </Button>
         </Modal.Footer>
       </Modal>
-      <Jumbotron className="mt-5 border border-muted bg-light">
+      <Jumbotron className="mt-5 border border-muted ">
         <div className="second-edit-btn">
           <Button variant="light" className="edit-btn2 rounded-pill"><GrEdit /></Button>
         </div>

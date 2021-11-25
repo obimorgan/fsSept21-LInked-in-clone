@@ -23,6 +23,7 @@ import { Link, useLocation } from "react-router-dom";
 const MyNavbar = () => {
   const location = useLocation();
   return (
+    <>
     <Container>
       <Navbar sticky="top" bg="white" variant="light" className="navbar-style">
         <Row>
@@ -151,6 +152,7 @@ const MyNavbar = () => {
         </Row>
       </Navbar>
     </Container>
+    </>
   );
 };
 
