@@ -1,18 +1,27 @@
 import { Modal, Form, Button, } from 'react-bootstrap'
 import { IoMdAdd } from "react-icons/io";
 // import {useState } from 'react'
+import { useParams} from 'react-router-dom'
+// import {useEffect} from 'react'
 
 
 
 
-const DeleteExpFormModal = ({ lgShow, id, expId, singleExp, experience }) => {
-    // const [singleExp, setSingleExp] = useState({})
+const DeleteExpFormModal = ({ lgShow, singleExp, experience }) => {
+
+    
+    const { id, expId } = useParams()
+    const params = useParams()
+    console.log(params)
+   
+    // useEffect (() => {
+    //     deleteExperience()
+    // }, [])
     const deleteExperience = async () => {
         try {
-            let response= await fetch(`https://striveschool-api.herokuapp.com/api/profile/${id}/experiences/'${expId}`,
+            let response= await fetch(`https://striveschool-api.herokuapp.com/api/profile/${id}/experiences/${expId}`,
                 {
                     method: "DELETE",
-                    body: JSON.stringify(),
                     headers: {
                         "Content-type": "application/json",
                         Authorization: `Bearer ${process.env.REACT_APP_JWT_TOKEN}`
@@ -28,6 +37,27 @@ const DeleteExpFormModal = ({ lgShow, id, expId, singleExp, experience }) => {
             console.log(error)
         }
     }
+    const editExperience = async () => {
+        try {
+            let response= await fetch(`https://striveschool-api.herokuapp.com/api/profile/${id}/experiences/${expId}`,
+                {
+                    method: "PUT",
+                    headers: {
+                        "Content-type": "application/json",
+                        Authorization: `Bearer ${process.env.REACT_APP_JWT_TOKEN}`
+                    }
+                })
+            if (response.ok) {
+             alert("Experience has been edited!")
+                
+            } else {
+                throw response
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return (
         <>
             <Form >
@@ -99,6 +129,9 @@ const DeleteExpFormModal = ({ lgShow, id, expId, singleExp, experience }) => {
                     <Modal.Footer>
                         <Button variant="danger" onClick={deleteExperience} className="rounded-pill">
                             Delete
+          </Button>
+          <Button variant="danger" onClick={saveEdit} className="rounded-pill">
+                            save
           </Button>
                     </Modal.Footer>
                 </Modal>
