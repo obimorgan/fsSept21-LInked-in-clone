@@ -1,11 +1,12 @@
 // import { fetchPosts } from "../../ApiCalls";
-import { Container, Row, Col, Card, Button, Jumbotron } from "react-bootstrap";
+import { Row, Col, Button, Jumbotron } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { BiLike } from "react-icons/bi";
 import { FaRegCommentDots } from "react-icons/fa";
 import { FiShare2 } from "react-icons/fi";
 import { IoMdSend } from "react-icons/io";
 import CreatePost from "./CreatePost";
+import SinglePost from "./SinglePost";
 const NewsFeed = () => {
   const [posts, setPost] = useState([]);
 
@@ -16,20 +17,21 @@ const NewsFeed = () => {
   const fetchPost = async () => {
     try {
       let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/posts/", {
-            method: "GET",
-            headers:{
-
-                "Content-Type": "application/json",
-                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTljOWYyM2QzNzU4MDAwMTU0OWI5ZmYiLCJpYXQiOjE2Mzc2NjcyOTgsImV4cCI6MTYzODg3Njg5OH0.gf1qWhpzpZKM0aFa2UShaRr8Fj276lsI2YB6ZQFMVq0"
-            }
-        })
+        "https://striveschool-api.herokuapp.com/api/posts/",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTljOWYyM2QzNzU4MDAwMTU0OWI5ZmYiLCJpYXQiOjE2Mzc2NjcyOTgsImV4cCI6MTYzODg3Njg5OH0.gf1qWhpzpZKM0aFa2UShaRr8Fj276lsI2YB6ZQFMVq0",
+          },
+        }
+      );
       console.log(response);
 
       if (response.ok) {
         let data = await response.json();
-        console.log(data);
-        setPost(data)
+        setPost(data.reverse());
       } else {
         console.log("error has occured");
       }
@@ -37,32 +39,16 @@ const NewsFeed = () => {
   };
 
   return (
-        <Row className=" justify-content-center">
-            <Col className="col-8 mt-2">
-            <CreatePost />
-    {
-         posts.slice(0, 10).map(post=>(
-            <Jumbotron className="bg-light border border-muted">
-            <img src={post.user.image} className="user-img" alt="user-img" />
-            <h3>{post.user.username}</h3>
-            <p>
-              {post.text}<br/>
-              <strong>{post.user.title}</strong>
-            </p>
-            <p >Contact Info</p>
-            <p className="emails text-primary">{post.user.email}</p>
-           <hr/>
-           <form action="" className="form-inline justify-content-center">
-           <Button className="user-btns mx-2 rounded-pill" variant=""><BiLike /> Like</Button>
-           <Button className="user-btns mx-2 rounded-pill" variant=""><FaRegCommentDots /> Comment</Button>
-           <Button className="user-btns mx-2 rounded-pill" variant=""><FiShare2 /> Share</Button>
-           <Button className="user-btns mx-2 rounded-pill" variant=""><IoMdSend /> Send</Button>
-           </form>
-          </Jumbotron>
-
-        ))
-    }
-    </Col>
+    <Row className=" justify-content-center">
+      <Col className="col-8 mt-2">
+        <CreatePost />
+        {posts
+         
+          .slice(1, 5)
+          .map((post) => (
+            <SinglePost post={post} />
+          ))}
+      </Col>
     </Row>
   );
 };
