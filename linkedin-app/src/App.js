@@ -8,6 +8,7 @@ import NewsFeed from "./Components/PersonalPage/NewsFeed";
 import PersonalPage from "./Components/PersonalPage/PersonalPage";
 import PersonalExpr from "./Components/PersonalPage/PersonalExpr"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ImgProfileUpload from "./Components/PersonalPage/ImgProfileUpload";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/profile"  element ={<PersonalPage/>} />
           <Route path="/profile/:id"  element ={<PersonalExpr/>} />
           <Route path="/home"  element ={<NewsFeed />} />
+          <Route path="/notification"  element ={<ImgProfileUpload />} />
         </Routes>
         <Myfooter/>
     </BrowserRouter>
