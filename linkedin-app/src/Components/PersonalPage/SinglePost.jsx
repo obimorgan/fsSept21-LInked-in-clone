@@ -20,7 +20,7 @@ const SinglePost = ({ post }) => {
           headers: {
             "Content-Type": "application/json",
             "Authorization":
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTljOWYyM2QzNzU4MDAwMTU0OWI5ZmYiLCJpYXQiOjE2Mzc4Mzc2OTgsImV4cCI6MTYzOTA0NzI5OH0.EK8NkGq7iGnkbmbqMYF4q7CfExyj4XarmGpALSwSOLA",
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTljOWYyM2QzNzU4MDAwMTU0OWI5ZmYiLCJpYXQiOjE2Mzc4NTQyNTUsImV4cCI6MTYzOTA2Mzg1NX0._gyDpYS0U-qJkLEesr8w71R4VPnITeZbPi_FCWHey_4",
           },
         }
       );
@@ -43,7 +43,7 @@ const SinglePost = ({ post }) => {
           headers: {
             "Content-Type": "application/json",
             "Authorization":
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTljOWYyM2QzNzU4MDAwMTU0OWI5ZmYiLCJpYXQiOjE2Mzc4NDkwODQsImV4cCI6MTYzOTA1ODY4NH0.upPznZ-Z4222-q6CzK7IDtI-PAP71jYYkwFRETS1xwI",
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTljOWYyM2QzNzU4MDAwMTU0OWI5ZmYiLCJpYXQiOjE2Mzc4NTQyNTUsImV4cCI6MTYzOTA2Mzg1NX0._gyDpYS0U-qJkLEesr8w71R4VPnITeZbPi_FCWHey_4",
           },
         }
       );
