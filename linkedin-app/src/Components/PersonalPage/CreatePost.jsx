@@ -7,13 +7,12 @@ import { GrArticle } from "react-icons/gr";
 import { BiWorld } from "react-icons/bi";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { useState } from "react";
-const CreatePost = () => {
+const CreatePost = (props) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [post, setPost] = useState({
     text: "",
-    username: ""
   });
   const handleInput =(fieldName, value)=> {
     setPost({
@@ -31,8 +30,8 @@ const CreatePost = () => {
           body: JSON.stringify(post),
           headers: {
             "Content-Type": "application/json",
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTljOWYyM2QzNzU4MDAwMTU0OWI5ZmYiLCJpYXQiOjE2Mzc4Mzc2OTgsImV4cCI6MTYzOTA0NzI5OH0.EK8NkGq7iGnkbmbqMYF4q7CfExyj4XarmGpALSwSOLA",
+            "Authorization":
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTljOWYyM2QzNzU4MDAwMTU0OWI5ZmYiLCJpYXQiOjE2Mzc4Mzc2OTgsImV4cCI6MTYzOTA0NzI5OH0.EK8NkGq7iGnkbmbqMYF4q7CfExyj4XarmGpALSwSOLA",
           },
         }
       );
@@ -45,29 +44,7 @@ const CreatePost = () => {
       console.log(e);
     }
   };
-  const deletePost = async (props) => {
-    alert("hello");
-    try {
-      let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/posts/" + props.id,
-        {
-          method: "DELETE",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTljOWYyM2QzNzU4MDAwMTU0OWI5ZmYiLCJpYXQiOjE2Mzc4Mzc2OTgsImV4cCI6MTYzOTA0NzI5OH0.EK8NkGq7iGnkbmbqMYF4q7CfExyj4XarmGpALSwSOLA",
-          },
-        }
-      );
-      if (response.ok) {
-        alert("post is deleted");
-      } else {
-        console.log("Error has occured");
-      }
-    } catch (e) {
-      console.log(e);
-    }
-  };
+
 
   return (
     <>
@@ -94,15 +71,7 @@ const CreatePost = () => {
               <IoMdArrowDropdown />
             </Button>
           </form>
-          <Form.Group className="mt-4 text-muted">
-            <Form.Label>Enter UserName:</Form.Label>
-            <Form.Control type="text" placeholder="Enter username..." 
-            value={post.username}
-            onChange={(e)=> {
-              handleInput('username', e.target.value)
-            }}
-            />
-          </Form.Group>
+          
           <Form.Group controlId="exampleForm.ControlTextarea1">
             <Form.Label className="text-muted">
               What do you want to talk about?
@@ -118,9 +87,6 @@ const CreatePost = () => {
           </Form.Group>
         </Modal.Body>
         <Modal.Footer>
-        <Button variant="danger" className="mr-auto rounded-pill" onClick={deletePost}>
-            Delete
-          </Button>
           <Button variant="secondary" className="rounded-pill" onClick={handleClose}>
             Close
           </Button>
