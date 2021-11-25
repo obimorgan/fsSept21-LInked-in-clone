@@ -17,8 +17,6 @@ const MyProfilesSidebar = ({ personalInfo }) => {
                                 <div className="nav-link px-0 py-0 pName">{info.name}</div>
                                 <div className="nav-link px-0 py-0 pJob">{info.surname}</div>
                             </Link>
-
-
                             <Button variant="text-" className="btn3 border-dark rounded-pill mt-2">Connect</Button>
                         </Col>
                     </div>
