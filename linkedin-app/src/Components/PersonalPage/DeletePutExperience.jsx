@@ -82,7 +82,6 @@ const DeleteExpFormModal = ({ lgShow, singleExp }) => {
                 <Modal
                     size="lg"
                     show={lgShow}
-                    onHide={() => (lgShow)} ///// need to fix this!! this allows for the for to close
                     aria-labelledby="example-modal-sizes-title-lg"
                 >
                     <Modal.Header closeButton>
