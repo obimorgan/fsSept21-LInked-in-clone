@@ -1,7 +1,7 @@
 import { Modal, Form, Button, } from 'react-bootstrap'
 import { IoMdAdd } from "react-icons/io";
-import {  useState } from 'react'
-// import { useEffect} from 'react'
+import { useState } from 'react'
+import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 // import {useEffect} from 'react'
 
@@ -10,29 +10,26 @@ import { useParams } from 'react-router-dom'
 
 const DeleteExpFormModal = ({ lgShow, singleExp }) => {
 
-    //     const [toEdit, setToEdit] = useState({
-    //     role: "",
-    //     company: "",
-    //     description: "",
-    //     area: "",
-    //     startDate:new Date() 
-    // })
-
     const [toEdit, setToEdit] = useState({
-        role: singleExp.role,
-        company: singleExp.company,
-        description: singleExp.description,
-        area: singleExp.area,
-        startDate:new Date() 
+        role: "",
+        company: "",
+        description: "",
+        area: "",
+        startDate: new Date()
     })
-    // const [toeditRole, setEditRole] = useState(singleExp.role)
-    // const [toeditCompany, setEditCompany] = useState(singleExp.company)
-    // const [toeditArea, setEditArea] = useState(singleExp.area)
-    // const [toseditDscription, setEditDscription] = useState(singleExp.description)
 
     const { id, expId } = useParams()
     const params = useParams()
     console.log(params)
+
+    useEffect(() =>
+        setToEdit({
+            role: singleExp.role,
+            company: singleExp.company,
+            description: singleExp.description,
+            area: singleExp.area,
+        }), [singleExp]
+    )
 
 
     const deleteExperience = async () => {
@@ -57,23 +54,18 @@ const DeleteExpFormModal = ({ lgShow, singleExp }) => {
     }
 
     // function handleChange(e) {
-        
+
     // }
     const saveEdit = async () => {
         try {
             let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${id}/experiences/${expId}`,
                 {
                     method: "PUT",
-                    // body: JSON.stringify({
-                    //     toeditRole,
-                    //     toeditCompany,
-                    //     toeditArea,
-                    //     toseditDscription,
-                    // }),
                     body: JSON.stringify(toEdit),
                     headers: {
                         "Content-type": "application/json",
-                        Authorization: `Bearer ${process.env.REACT_APP_JWT_TOKEN}`
+                        Authorization: `Bearer ${process.env.REACT_APP_JWT_TOKEN}`,
+                        Accept: "application/json"
                     }
                 })
             if (response.ok) {
@@ -127,11 +119,11 @@ const DeleteExpFormModal = ({ lgShow, singleExp }) => {
                             <Form.Control
                                 type="text"
                                 // placeholder={singleExp.role}
-                                value={singleExp.role}
+                                value={toEdit.role}
                                 onChange={e =>
                                     setToEdit({
                                         ...toEdit,
-                                        company: e.target.value
+                                        role: e.target.value
                                     })}
                             />
                         </Form.Group>
@@ -140,13 +132,12 @@ const DeleteExpFormModal = ({ lgShow, singleExp }) => {
                             <Form.Control
                                 type="text"
                                 // placeholder={singleExp.company}
-                                value={singleExp.company}
+                                value={toEdit.company}
                                 onChange={e =>
                                     setToEdit({
                                         ...toEdit,
                                         company: e.target.value
                                     })}
-
                             />
                         </Form.Group>
                         <Form.Group controlId="formBasicEmail">
@@ -154,11 +145,11 @@ const DeleteExpFormModal = ({ lgShow, singleExp }) => {
                             <Form.Control
                                 type="text"
                                 // placeholder={singleExp.area}
-                                value={singleExp.area}
+                                value={toEdit.area}
                                 onChange={e =>
                                     setToEdit({
                                         ...toEdit,
-                                        company: e.target.value
+                                        area: e.target.value
                                     })}
                             />
                         </Form.Group>
@@ -168,12 +159,12 @@ const DeleteExpFormModal = ({ lgShow, singleExp }) => {
                                 type="text"
                                 rows={3}
                                 // placeholder={singleExp.description}
-                                value={singleExp.description}
-                                onChange={e => 
+                                value={toEdit.description}
+                                onChange={e =>
                                     setToEdit({
                                         ...toEdit,
-                                        company: e.target.value,
-                                        
+                                        description: e.target.value,
+
                                     }), console.log("editing")}
                             />
                         </Form.Group>
