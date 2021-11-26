@@ -31,7 +31,7 @@ const CreatePost = (props) => {
           headers: {
             "Content-Type": "application/json",
             "Authorization":
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTljOWYyM2QzNzU4MDAwMTU0OWI5ZmYiLCJpYXQiOjE2Mzc4Mzc2OTgsImV4cCI6MTYzOTA0NzI5OH0.EK8NkGq7iGnkbmbqMYF4q7CfExyj4XarmGpALSwSOLA",
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTljOWYyM2QzNzU4MDAwMTU0OWI5ZmYiLCJpYXQiOjE2Mzc5MjM5MTgsImV4cCI6MTYzOTEzMzUxOH0.33s9YKpvuar5K-gBELToRiix85OjS-TqkNpP5NUNcto",
           },
         }
       );
@@ -87,7 +87,7 @@ const CreatePost = (props) => {
           </Form.Group>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" className="rounded-pill" onClick={handleClose}>
+          <Button variant="secondary" className="rounded-pill mr-auto" onClick={handleClose}>
             Close
           </Button>
           <Button variant="success" className="rounded-pill" onClick={postSmth}>
