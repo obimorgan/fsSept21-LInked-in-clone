@@ -7,19 +7,20 @@ import { GrArticle } from "react-icons/gr";
 import { BiWorld } from "react-icons/bi";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { useState } from "react";
-const CreatePost = (props) => {
+const CreatePost = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [image, setImage] = useState(null);
   const [post, setPost] = useState({
     text: "",
   });
-  const handleInput =(fieldName, value)=> {
+  const handleInput = (fieldName, value) => {
     setPost({
       ...post,
-      [fieldName] : value
-    })
-  }
+      [fieldName]: value,
+    });
+  };
   const postSmth = async () => {
     alert("hello");
     try {
@@ -30,13 +31,31 @@ const CreatePost = (props) => {
           body: JSON.stringify(post),
           headers: {
             "Content-Type": "application/json",
-            "Authorization":
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTljOWYyM2QzNzU4MDAwMTU0OWI5ZmYiLCJpYXQiOjE2Mzc5MjM5MTgsImV4cCI6MTYzOTEzMzUxOH0.33s9YKpvuar5K-gBELToRiix85OjS-TqkNpP5NUNcto",
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTljOWYyM2QzNzU4MDAwMTU0OWI5ZmYiLCJpYXQiOjE2Mzc5MjM5MTgsImV4cCI6MTYzOTEzMzUxOH0.33s9YKpvuar5K-gBELToRiix85OjS-TqkNpP5NUNcto",
           },
         }
       );
       if (response.ok) {
-        alert("post is added");
+        const data = await response.json();
+        alert("post created");
+        if (image) {
+          const fd = new FormData();
+          fd.append("post", image);
+
+          let response = await fetch(
+            "https://striveschool-api.herokuapp.com/api/posts/" + data._id,
+            {
+              method: "POST",
+              body: fd,
+              headers: {
+                Authorization:
+                  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTljOWYyM2QzNzU4MDAwMTU0OWI5ZmYiLCJpYXQiOjE2Mzc5MjM5MTgsImV4cCI6MTYzOTEzMzUxOH0.33s9YKpvuar5K-gBELToRiix85OjS-TqkNpP5NUNcto",
+              },
+            }
+          );
+          alert("Image uploaded");
+        }
       } else {
         console.log("Error has occured");
       }
@@ -44,7 +63,6 @@ const CreatePost = (props) => {
       console.log(e);
     }
   };
-
 
   return (
     <>
@@ -71,7 +89,7 @@ const CreatePost = (props) => {
               <IoMdArrowDropdown />
             </Button>
           </form>
-          
+
           <Form.Group controlId="exampleForm.ControlTextarea1">
             <Form.Label className="text-muted">
               What do you want to talk about?
@@ -81,13 +99,26 @@ const CreatePost = (props) => {
               rows={8}
               value={post.text}
               onChange={(e) => {
-                handleInput('text',   e.target.value);
+                handleInput("text", e.target.value);
               }}
             />
           </Form.Group>
+          <input
+            type="file"
+            variant=""
+            className="text-primary ml-5"
+            onChange={(event) => {
+              console.log(event.target.files[0]);
+              setImage(event.target.files[0]);
+            }}
+          />
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" className="rounded-pill mr-auto" onClick={handleClose}>
+          <Button
+            variant="secondary"
+            className="rounded-pill mr-auto"
+            onClick={handleClose}
+          >
             Close
           </Button>
           <Button variant="success" className="rounded-pill" onClick={postSmth}>
@@ -107,7 +138,11 @@ const CreatePost = (props) => {
           </Button>
         </form>
         <form action="" className="form-inline justify-content-center ">
-          <Button variant="" className="user-btns1 ml-5 rounded-pill">
+          <Button
+            variant=""
+            className="user-btns1 ml-5 rounded-pill"
+           
+          >
             <MdAddToPhotos /> Photo
           </Button>
           <Button variant="" className="user-btns1 ml-5 rounded-pill">

@@ -67,6 +67,9 @@ const SinglePost = ({ post }) => {
           <br />
           <strong>{post.user.title}</strong>
         </p>
+        {post.image &&
+        <img src={post.image} style={{width:"100%"}} />
+        }
         <p>Contact Info</p>
         <p className="emails text-primary">{post.user.email}</p>
         <Button className="edit-btn mx-2 rounded-pill" variant="success" onClick={() => setShow(true)}>
