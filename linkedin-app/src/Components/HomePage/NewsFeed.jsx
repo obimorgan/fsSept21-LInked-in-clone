@@ -6,7 +6,7 @@ import { FaRegCommentDots } from "react-icons/fa";
 import { FiShare2 } from "react-icons/fi";
 import { IoMdSend } from "react-icons/io";
 import CreatePost from "./CreatePost";
-import SinglePost from "./SinglePost";
+import SinglePost from "../PersonalPage/SinglePost";
 const NewsFeed = () => {
   const [posts, setPost] = useState([]);
 
