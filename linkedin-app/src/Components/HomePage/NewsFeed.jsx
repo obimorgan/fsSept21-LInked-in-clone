@@ -12,6 +12,7 @@ const NewsFeed = () => {
 
   useEffect(async () => {
     fetchPost();
+
   }, []);
 
   const fetchPost = async () => {

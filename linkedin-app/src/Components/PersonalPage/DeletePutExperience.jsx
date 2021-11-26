@@ -1,42 +1,73 @@
 import { Modal, Form, Button, } from 'react-bootstrap'
 import { IoMdAdd } from "react-icons/io";
-import { useState, useEffect } from "react"
+import { useState } from 'react'
+import { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 
 
 
-const ExpFormModal = ({ lgShow, id }) => {
-    const [experience, setExperience] = useState({
+
+const DeleteExpFormModal = ({ lgShow, singleExp }) => {
+
+    const [toEdit, setToEdit] = useState({
         role: "",
         company: "",
         description: "",
         area: "",
-        startDate:new Date()
-        
+        startDate: new Date()
     })
-    // useEffect(() => {
-    //     setExperience(experience => ({
-    //         ...experience,
-           
-    //     }))
-    // }, [id])
 
-    const postExperience = async () => {
-        
-        console.log("Test test test")
+    const { id, expId } = useParams()
+    const params = useParams()
+    console.log(params)
+
+    useEffect(() =>
+        setToEdit({
+            role: singleExp.role,
+            company: singleExp.company,
+            description: singleExp.description,
+            area: singleExp.area,
+        }), [singleExp]
+    )
+
+
+    const deleteExperience = async () => {
         try {
-            let res = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`,
+            let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${id}/experiences/${expId}`,
                 {
-                    method: "POST",
-                    body: JSON.stringify(experience),
+                    method: "DELETE",
                     headers: {
                         "Content-type": "application/json",
                         Authorization: `Bearer ${process.env.REACT_APP_JWT_TOKEN}`
                     }
                 })
-            if (res.ok) {
-                alert("You added a new experience!")
+            if (response.ok) {
+                alert("Experience is deleted!")
+
             } else {
-                throw res
+                throw response
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    const saveEdit = async () => {
+        try {
+            let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${id}/experiences/${expId}`,
+                {
+                    method: "PUT",
+                    body: JSON.stringify(toEdit),
+                    headers: {
+                        "Content-type": "application/json",
+                        Authorization: `Bearer ${process.env.REACT_APP_JWT_TOKEN}`,
+                        Accept: "application/json"
+                    }
+                })
+            if (response.ok) {
+                alert("Experience has been edited!")
+
+            } else {
+                throw response
             }
         } catch (error) {
             console.log(error)
@@ -44,14 +75,13 @@ const ExpFormModal = ({ lgShow, id }) => {
     }
 
 
+
     return (
         <>
             <Form >
                 <Modal
-
                     size="lg"
                     show={lgShow}
-                    onHide={() => (lgShow)} ///// need to fix this!! this allows for the for to close
                     aria-labelledby="example-modal-sizes-title-lg"
                 >
                     <Modal.Header closeButton>
@@ -82,11 +112,11 @@ const ExpFormModal = ({ lgShow, id }) => {
                             <Form.Label>Title*</Form.Label>
                             <Form.Control
                                 type="text"
-                                placeholder="Ex: Retail Sales Manager"
-                                value={experience.role}
+                                // placeholder={singleExp.role}
+                                value={toEdit.role}
                                 onChange={e =>
-                                    setExperience({
-                                        ...experience,
+                                    setToEdit({
+                                        ...toEdit,
                                         role: e.target.value
                                     })}
                             />
@@ -95,11 +125,11 @@ const ExpFormModal = ({ lgShow, id }) => {
                             <Form.Label>Company name*</Form.Label>
                             <Form.Control
                                 type="text"
-                                placeholder="Ex: Google "
-                                value={experience.company}
+                                // placeholder={singleExp.company}
+                                value={toEdit.company}
                                 onChange={e =>
-                                    setExperience({
-                                        ...experience,
+                                    setToEdit({
+                                        ...toEdit,
                                         company: e.target.value
                                     })}
                             />
@@ -108,11 +138,11 @@ const ExpFormModal = ({ lgShow, id }) => {
                             <Form.Label>Location</Form.Label>
                             <Form.Control
                                 type="text"
-                                placeholder="Ex: London, United Kingdom "
-                                value={experience.area}
+                                // placeholder={singleExp.area}
+                                value={toEdit.area}
                                 onChange={e =>
-                                    setExperience({
-                                        ...experience,
+                                    setToEdit({
+                                        ...toEdit,
                                         area: e.target.value
                                     })}
                             />
@@ -122,20 +152,24 @@ const ExpFormModal = ({ lgShow, id }) => {
                             <Form.Control
                                 type="text"
                                 rows={3}
-                                placeholder="Describe your experience"
-                                value={experience.description}
+                                // placeholder={singleExp.description}
+                                value={toEdit.description}
                                 onChange={e =>
-                                    setExperience({
-                                        ...experience,
-                                        description: e.target.value
-                                    })}
+                                    setToEdit({
+                                        ...toEdit,
+                                        description: e.target.value,
+
+                                    }), console.log("editing")}
                             />
                         </Form.Group>
                         <Button variant="" className="rounded-pill add-media text-primary border-primary"><IoMdAdd />Add media</Button>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="primary" onClick={postExperience} className="rounded-pill">
-                            Submit
+                        <Button variant="danger" onClick={deleteExperience} className="rounded-pill">
+                            Delete
+          </Button>
+                        <Button variant="danger" onClick={saveEdit} className="rounded-pill">
+                            save
           </Button>
                     </Modal.Footer>
                 </Modal>
@@ -144,4 +178,4 @@ const ExpFormModal = ({ lgShow, id }) => {
     )
 }
 
-export default ExpFormModal
+export default DeleteExpFormModal

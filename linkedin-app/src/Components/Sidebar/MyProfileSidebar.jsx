@@ -13,6 +13,8 @@ const MyProfilesSidebar = ({ personalInfo }) => {
                         </Col>
                         <Col md={10} className="flex-column">
 
+                            {/* Link to experience info */}
+                            
                             <Link to={"/profile/" + info._id}>
                                 <div className="nav-link px-0 py-0 pName">{info.name}</div>
                                 <div className="nav-link px-0 py-0 pJob">{info.surname}</div>
