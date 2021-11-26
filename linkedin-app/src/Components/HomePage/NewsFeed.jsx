@@ -1,14 +1,18 @@
 // import { fetchPosts } from "../../ApiCalls";
-import { Row, Col} from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import CreatePost from "./CreatePost";
 import SinglePost from "../PersonalPage/SinglePost";
+import HomePageLeftSideBar from "../Sidebar/HomePageLeftSideBar"
+import {fetchPersonalProfileInfo} from "../../ApiCalls"
+
 const NewsFeed = () => {
+  const [userInfo, setUserInfo] = useState({})
   const [posts, setPost] = useState([]);
 
   useEffect(async () => {
     fetchPost();
-
+    fetchPersonalProfileInfo('me').then((res) => setUserInfo(res))
   }, []);
 
   const fetchPost = async () => {
@@ -32,15 +36,18 @@ const NewsFeed = () => {
       } else {
         console.log("error has occured");
       }
-    } catch (error) {}
+    } catch (error) { }
   };
 
   return (
     <Row className=" justify-content-center">
+      <Col className="col-3 mt-2 px-0">
+        <HomePageLeftSideBar userInfo={userInfo}/>
+      </Col>
       <Col className="col-8 mt-2">
         <CreatePost />
         {posts
-         
+
           .slice(1, 5)
           .map((post) => (
             <SinglePost post={post} />
