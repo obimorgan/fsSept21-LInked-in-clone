@@ -15,7 +15,7 @@ const MyJumbotron = ({info}) => {
   const handleShow = () => setShow(true);
   return (
     <>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} className="userjumbo">
         <Modal.Header closeButton>
           <Modal.Title>I'm a User</Modal.Title>
         </Modal.Header>
@@ -38,7 +38,7 @@ const MyJumbotron = ({info}) => {
             </Button>
         </Modal.Footer>
       </Modal>
-      <Jumbotron className="mt-5 border border-muted bg-light">
+      <Jumbotron className="mt-5 border border-muted ">
         <div className="second-edit-btn">
           <Button variant="light" className="edit-btn2 rounded-pill"><GrEdit /></Button>
         </div>
