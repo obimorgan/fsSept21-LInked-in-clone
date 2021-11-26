@@ -17,10 +17,11 @@ const SinglePost = ({ post }) => {
         "https://striveschool-api.herokuapp.com/api/posts/" + post._id,
         {
           method: "PUT",
+          body: JSON.stringify({text}),
           headers: {
             "Content-Type": "application/json",
             "Authorization":
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTljOWYyM2QzNzU4MDAwMTU0OWI5ZmYiLCJpYXQiOjE2Mzc4NTQyNTUsImV4cCI6MTYzOTA2Mzg1NX0._gyDpYS0U-qJkLEesr8w71R4VPnITeZbPi_FCWHey_4",
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTljOWYyM2QzNzU4MDAwMTU0OWI5ZmYiLCJpYXQiOjE2Mzc5MjM5MTgsImV4cCI6MTYzOTEzMzUxOH0.33s9YKpvuar5K-gBELToRiix85OjS-TqkNpP5NUNcto",
           },
         }
       );
@@ -43,7 +44,7 @@ const SinglePost = ({ post }) => {
           headers: {
             "Content-Type": "application/json",
             "Authorization":
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTljOWYyM2QzNzU4MDAwMTU0OWI5ZmYiLCJpYXQiOjE2Mzc4NTQyNTUsImV4cCI6MTYzOTA2Mzg1NX0._gyDpYS0U-qJkLEesr8w71R4VPnITeZbPi_FCWHey_4",
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTljOWYyM2QzNzU4MDAwMTU0OWI5ZmYiLCJpYXQiOjE2Mzc5MjM5MTgsImV4cCI6MTYzOTEzMzUxOH0.33s9YKpvuar5K-gBELToRiix85OjS-TqkNpP5NUNcto",
           },
         }
       );
@@ -68,8 +69,8 @@ const SinglePost = ({ post }) => {
         </p>
         <p>Contact Info</p>
         <p className="emails text-primary">{post.user.email}</p>
-        <Button className="edit-btn mx-2 rounded-pill" variant="">
-            <GrEdit />
+        <Button className="edit-btn mx-2 rounded-pill" variant="success" onClick={() => setShow(true)}>
+            <GrEdit /> Edit
           </Button>
         <hr />
         <form action="" className="form-inline justify-content-center">
@@ -82,14 +83,14 @@ const SinglePost = ({ post }) => {
           <Button
             className="user-btns mx-2 rounded-pill"
             variant=""
-            onClick={() => setShow(true)}
+            
           >
             <FiShare2 /> Share
           </Button>
           <Button
             className="user-btns mx-2 rounded-pill"
             variant=""
-            onClick={deletePost}
+            
           >
             <IoMdSend /> Send
           </Button>
@@ -97,18 +98,18 @@ const SinglePost = ({ post }) => {
       </Jumbotron>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Edit Post</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {" "}
           <Form.Group controlId="exampleForm.ControlTextarea1">
-            <Form.Label>Example textarea</Form.Label>
+            <Form.Label>Post Area</Form.Label>
             <Form.Control as="textarea" rows={3} value={text} onChange={(e)=>setText(e.target.value)} />
           </Form.Group>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>Close</Button>
-          <Button variant="primary" onClick={updatePost}>Save Changes</Button>
+          <Button className="mr-auto rounded-pill" variant="danger"onClick={deletePost}>Delete</Button>
+          <Button variant="success" className="rounded-pill" onClick={updatePost}>Save Changes</Button>
         </Modal.Footer>
       </Modal>
     </>
