@@ -1,13 +1,14 @@
 import { Jumbotron, Col, Image, Button } from "react-bootstrap";
 import { IoMdAdd } from "react-icons/io";
 import { GrEdit } from "react-icons/gr";
-import { useState} from "react";
-import DeleteExpFormModal from "../PersonalPage/DeleteExpfroModal"
+import { useState } from "react";
+import DeletePutExperience from "../PersonalPage/DeletePutExperience"
 
 
 
 
-const SingleExprJumbotron = ({singleExp}) => {
+
+const SingleExprJumbotron = ({ singleExp }) => {
 
   const [lgShow, setLgShow] = useState(false);
   return (
@@ -34,11 +35,11 @@ const SingleExprJumbotron = ({singleExp}) => {
               <div className="pJob">{singleExp.description}</div>
             </Col>
           </div>
-          <DeleteExpFormModal lgShow={lgShow} expId={singleExp._id}
-          singleExp={singleExp}
+          <DeletePutExperience lgShow={lgShow} expId={singleExp._id}
+            singleExp={singleExp}
+
           />
-          
-          
+
         </div>
       </Jumbotron>
 
