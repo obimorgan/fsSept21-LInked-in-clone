@@ -41,7 +41,7 @@ const NewsFeed = () => {
         {posts.slice(1, 20).map((post) => (
           <>
             <SinglePost post={post} />
-            <CreatePost  posted={post} />
+           
           </>
         ))}
       </Col>
