@@ -1,6 +1,7 @@
 import { Modal, Form, Button, } from 'react-bootstrap'
 import { IoMdAdd } from "react-icons/io";
-import { useEffect, useState } from 'react'
+import {  useState } from 'react'
+// import { useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 // import {useEffect} from 'react'
 
@@ -9,17 +10,25 @@ import { useParams } from 'react-router-dom'
 
 const DeleteExpFormModal = ({ lgShow, singleExp }) => {
 
+    //     const [toEdit, setToEdit] = useState({
+    //     role: "",
+    //     company: "",
+    //     description: "",
+    //     area: "",
+    //     startDate:new Date() 
+    // })
+
     const [toEdit, setToEdit] = useState({
-        role: "",
-        company: "",
-        description: "",
-        area: "",
+        role: singleExp.role,
+        company: singleExp.company,
+        description: singleExp.description,
+        area: singleExp.area,
         startDate:new Date() 
     })
-    // const [toeditRole, setEditRole] = useState("")
-    // const [toeditCompany, setEditCompany] = useState("")
-    // const [toeditArea, setEditArea] = useState("")
-    // const [toseditDscription, setEditDscription] = useState("")
+    // const [toeditRole, setEditRole] = useState(singleExp.role)
+    // const [toeditCompany, setEditCompany] = useState(singleExp.company)
+    // const [toeditArea, setEditArea] = useState(singleExp.area)
+    // const [toseditDscription, setEditDscription] = useState(singleExp.description)
 
     const { id, expId } = useParams()
     const params = useParams()
@@ -33,7 +42,6 @@ const DeleteExpFormModal = ({ lgShow, singleExp }) => {
                     method: "DELETE",
                     headers: {
                         "Content-type": "application/json",
-                        body: JSON.stringify(toEdit),
                         Authorization: `Bearer ${process.env.REACT_APP_JWT_TOKEN}`
                     }
                 })
@@ -47,11 +55,21 @@ const DeleteExpFormModal = ({ lgShow, singleExp }) => {
             console.log(error)
         }
     }
+
+    // function handleChange(e) {
+        
+    // }
     const saveEdit = async () => {
         try {
             let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${id}/experiences/${expId}`,
                 {
                     method: "PUT",
+                    // body: JSON.stringify({
+                    //     toeditRole,
+                    //     toeditCompany,
+                    //     toeditArea,
+                    //     toseditDscription,
+                    // }),
                     body: JSON.stringify(toEdit),
                     headers: {
                         "Content-type": "application/json",
@@ -68,6 +86,8 @@ const DeleteExpFormModal = ({ lgShow, singleExp }) => {
             console.log(error)
         }
     }
+
+
 
     return (
         <>
@@ -149,11 +169,12 @@ const DeleteExpFormModal = ({ lgShow, singleExp }) => {
                                 rows={3}
                                 // placeholder={singleExp.description}
                                 value={singleExp.description}
-                                onChange={e =>
+                                onChange={e => 
                                     setToEdit({
                                         ...toEdit,
-                                        company: e.target.value
-                                    })}
+                                        company: e.target.value,
+                                        
+                                    }), console.log("editing")}
                             />
                         </Form.Group>
                         <Button variant="" className="rounded-pill add-media text-primary border-primary"><IoMdAdd />Add media</Button>
