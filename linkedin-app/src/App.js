@@ -13,11 +13,11 @@ import ImgBgUpload from "./Components/PersonalPage/ImgBgUpload";
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App-header">
+      < MyNavbar/>
     <Row className="justify-content-center">
       <Col md={7}>
-    <BrowserRouter>
-      < MyNavbar/>
         <Routes>
           <Route path="/" element ={<PersonalPage/>} />
           <Route path="/profile"  element ={<PersonalPage/>} />
@@ -28,10 +28,10 @@ function App() {
          
         </Routes>
         <Myfooter/>
-    </BrowserRouter>
      </Col> 
     </Row>
       </div>
+    </BrowserRouter>
   );
 }
 

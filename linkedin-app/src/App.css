@@ -238,6 +238,7 @@ Nav.Link {
   margin-top: -50px;
   margin-left: 15px;
   border: 1px solid grey !important;
+  height: 60px;
 }
 
 .App-header{
