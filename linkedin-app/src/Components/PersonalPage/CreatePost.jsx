@@ -138,11 +138,7 @@ const CreatePost = () => {
           </Button>
         </form>
         <form action="" className="form-inline justify-content-center ">
-          <Button
-            variant=""
-            className="user-btns1 ml-5 rounded-pill"
-           
-          >
+          <Button variant="" className="user-btns1 ml-5 rounded-pill">
             <MdAddToPhotos /> Photo
           </Button>
           <Button variant="" className="user-btns1 ml-5 rounded-pill">

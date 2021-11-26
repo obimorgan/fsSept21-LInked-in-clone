@@ -9,19 +9,19 @@ import { GrEdit } from "react-icons/gr";
 const SinglePost = ({ post }) => {
   const handleClose = () => setShow(false);
   const [show, setShow] = useState(false);
-  const [text, setText] =useState(post.text)
-  
-  const updatePost = async() => {
+  const [text, setText] = useState(post.text);
+
+  const updatePost = async () => {
     try {
       let res = await fetch(
         "https://striveschool-api.herokuapp.com/api/posts/" + post._id,
         {
           method: "PUT",
-          body: JSON.stringify({text}),
+          body: JSON.stringify({ text }),
           headers: {
             "Content-Type": "application/json",
-            "Authorization":
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTljOWYyM2QzNzU4MDAwMTU0OWI5ZmYiLCJpYXQiOjE2Mzc5MjM5MTgsImV4cCI6MTYzOTEzMzUxOH0.33s9YKpvuar5K-gBELToRiix85OjS-TqkNpP5NUNcto",
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTljOWYyM2QzNzU4MDAwMTU0OWI5ZmYiLCJpYXQiOjE2Mzc5MjM5MTgsImV4cCI6MTYzOTEzMzUxOH0.33s9YKpvuar5K-gBELToRiix85OjS-TqkNpP5NUNcto",
           },
         }
       );
@@ -33,8 +33,8 @@ const SinglePost = ({ post }) => {
     } catch (e) {
       console.log("error", e);
     }
-  //  console.log({text:text})
-  }
+    //  console.log({text:text})
+  };
   const deletePost = async () => {
     try {
       let res = await fetch(
@@ -43,8 +43,8 @@ const SinglePost = ({ post }) => {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
-            "Authorization":
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTljOWYyM2QzNzU4MDAwMTU0OWI5ZmYiLCJpYXQiOjE2Mzc5MjM5MTgsImV4cCI6MTYzOTEzMzUxOH0.33s9YKpvuar5K-gBELToRiix85OjS-TqkNpP5NUNcto",
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTljOWYyM2QzNzU4MDAwMTU0OWI5ZmYiLCJpYXQiOjE2Mzc5MjM5MTgsImV4cCI6MTYzOTEzMzUxOH0.33s9YKpvuar5K-gBELToRiix85OjS-TqkNpP5NUNcto",
           },
         }
       );
@@ -67,14 +67,16 @@ const SinglePost = ({ post }) => {
           <br />
           <strong>{post.user.title}</strong>
         </p>
-        {post.image &&
-        <img src={post.image} style={{width:"100%"}} />
-        }
+        {post.image && <img src={post.image} style={{ width: "100%" }} />}
         <p>Contact Info</p>
         <p className="emails text-primary">{post.user.email}</p>
-        <Button className="edit-btn mx-2 rounded-pill" variant="success" onClick={() => setShow(true)}>
-            <GrEdit /> Edit
-          </Button>
+        <Button
+          className="edit-btn mx-2 rounded-pill"
+          variant="success"
+          onClick={() => setShow(true)}
+        >
+          <GrEdit /> Edit
+        </Button>
         <hr />
         <form action="" className="form-inline justify-content-center">
           <Button className="user-btns mx-2 rounded-pill" variant="">
@@ -83,18 +85,10 @@ const SinglePost = ({ post }) => {
           <Button className="user-btns mx-2 rounded-pill" variant="">
             <FaRegCommentDots /> Comment
           </Button>
-          <Button
-            className="user-btns mx-2 rounded-pill"
-            variant=""
-            
-          >
+          <Button className="user-btns mx-2 rounded-pill" variant="">
             <FiShare2 /> Share
           </Button>
-          <Button
-            className="user-btns mx-2 rounded-pill"
-            variant=""
-            
-          >
+          <Button className="user-btns mx-2 rounded-pill" variant="">
             <IoMdSend /> Send
           </Button>
         </form>
@@ -107,12 +101,29 @@ const SinglePost = ({ post }) => {
           {" "}
           <Form.Group controlId="exampleForm.ControlTextarea1">
             <Form.Label>Post Area</Form.Label>
-            <Form.Control as="textarea" rows={3} value={text} onChange={(e)=>setText(e.target.value)} />
+            <Form.Control
+              as="textarea"
+              rows={3}
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+            />
           </Form.Group>
         </Modal.Body>
         <Modal.Footer>
-          <Button className="mr-auto rounded-pill" variant="danger"onClick={deletePost}>Delete</Button>
-          <Button variant="success" className="rounded-pill" onClick={updatePost}>Save Changes</Button>
+          <Button
+            className="mr-auto rounded-pill"
+            variant="danger"
+            onClick={deletePost}
+          >
+            Delete
+          </Button>
+          <Button
+            variant="success"
+            className="rounded-pill"
+            onClick={updatePost}
+          >
+            Save Changes
+          </Button>
         </Modal.Footer>
       </Modal>
     </>
