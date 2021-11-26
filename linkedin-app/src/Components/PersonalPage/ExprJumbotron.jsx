@@ -4,6 +4,7 @@ import { GrEdit } from "react-icons/gr";
 import { useState } from "react";
 import PostExpFormModal from "./PostExpFormModal"
 import DeleteExpFormModal from "./PostExpFormModal"
+import ExpFormModal from './ExpFormModal'
 import { Link } from "react-router-dom"
 
 
@@ -48,6 +49,7 @@ const ExprJumbotron = ({ expInfo, id }) => {
                 </div>
                 <DeleteExpFormModal lgShow={lgShow} expInfo={exp._id} />
                 <PostExpFormModal lgShow={lgShow} />
+                <ExpFormModal lgShow={lgShow} setLgShow={setLgShow} id={exp._id}/>
 
               </>
             )}

@@ -46,12 +46,12 @@ const NewsFeed = () => {
       </Col>
       <Col className="col-8 mt-2">
         <CreatePost />
-        {posts
-
-          .slice(1, 5)
-          .map((post) => (
+        {posts.slice(1, 20).map((post) => (
+          <>
             <SinglePost post={post} />
-          ))}
+           
+          </>
+        ))}
       </Col>
     </Row>
   );
