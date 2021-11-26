@@ -5,8 +5,11 @@ const HomePageLeftSideBar = ({ userInfo }) => {
     return (
         <>
             <Nav className="flex-column pJob border rounded mt-5">
-                <div className="flex-column mt-3 mb-2 mx-auto">
+                <div className="d-flex flex-column mt-3 mb-2">
+                    <div className="text-center">
                     <Image className="rounded-circle sideBarProfileImg" src={userInfo.image} />
+                    </div>
+                    
                     <div className="text-center pName">{userInfo.name} {userInfo.surname}</div>
                     <div className="text-center">{userInfo.area}</div>
                     <div className="text-center">{userInfo.title}</div>
@@ -20,7 +23,7 @@ const HomePageLeftSideBar = ({ userInfo }) => {
                     <div className="nav-link pName mt-n4">Grow your network</div>
                 </div>
                 <div className="border-top mx-2"></div>
-                <div className="flex=column">
+                <div className="flex-column">
                     <div className="nav-link py-3"> Access exclussive tools &amp; insights</div>
                     <div className="nav-link pName mt-n4"> Try Premium</div>
                 </div>
