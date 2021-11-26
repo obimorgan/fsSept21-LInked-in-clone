@@ -35,7 +35,7 @@ const ExprJumbotron = ({ expInfo }) => {
               </div>
             </div>
           </Jumbotron>
-        <ExpFormModal lgShow={lgShow} setLgShow={setLgShow} id={exp._id}/>
+        <ExpFormModal lgShow={lgShow} id={exp._id}/>
         </>
       )}
     </>
