@@ -1,10 +1,6 @@
 // import { fetchPosts } from "../../ApiCalls";
-import { Row, Col, Button, Jumbotron } from "react-bootstrap";
+import { Row, Col} from "react-bootstrap";
 import { useState, useEffect } from "react";
-import { BiLike } from "react-icons/bi";
-import { FaRegCommentDots } from "react-icons/fa";
-import { FiShare2 } from "react-icons/fi";
-import { IoMdSend } from "react-icons/io";
 import CreatePost from "./CreatePost";
 import SinglePost from "../PersonalPage/SinglePost";
 const NewsFeed = () => {

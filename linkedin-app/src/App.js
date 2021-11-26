@@ -1,7 +1,7 @@
 /** @format */
 
 import "./App.css";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import Myfooter from "./Components/Footer/Myfooter";
 import MyNavbar from "./Components/NavBar/MyNavbar";
 import NewsFeed from "./Components/HomePage/NewsFeed";

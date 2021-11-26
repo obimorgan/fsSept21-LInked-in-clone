@@ -5,7 +5,6 @@ import { RiQuestionFill } from "react-icons/ri";
 import { IoSettingsSharp } from "react-icons/io5";
 import { BsLinkedin } from "react-icons/bs";
 import { IconContext } from "react-icons";
-import { Container } from "react-bootstrap";
 
 
 const Myfooter = () => {
