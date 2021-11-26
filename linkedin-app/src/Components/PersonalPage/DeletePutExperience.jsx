@@ -3,7 +3,6 @@ import { IoMdAdd } from "react-icons/io";
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-// import {useEffect} from 'react'
 
 
 
@@ -52,10 +51,6 @@ const DeleteExpFormModal = ({ lgShow, singleExp }) => {
             console.log(error)
         }
     }
-
-    // function handleChange(e) {
-
-    // }
     const saveEdit = async () => {
         try {
             let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${id}/experiences/${expId}`,
